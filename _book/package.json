@@ -4,10 +4,9 @@
     "description": "Javascipt 学习指南 =======",
     "main": "index.js",
     "scripts": {
-        "start": "npm run build && npm run copy && npm run upload",
+        "start": "npm run build && npm run upload",
         "build": "gitbook build && exit 0",
-        "upload": "git pull origin master; git add .; git commit -am \"upload\"; git push -f origin master && exit 0",
-        "copy": "cp ./_book/index.html . && exit 0"
+        "upload": "git pull origin master; git add .; git commit -am \"upload\"; git push -f origin master && exit 0"
     },
     "author": "jirengu laucher",
     "license": "ISC",

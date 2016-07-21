@@ -1,0 +1,1225 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>闭包 | Javascipt 学习指南</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.5.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../_src/adding-script-html.html" />
+    
+    
+    <link rel="prev" href="../_src/initialization.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="2.9.2" data-chapter-title="闭包" data-filepath="_src/closures.md" data-basepath=".." data-revision="Thu Jul 21 2016 13:19:33 GMT+0800 (CST)">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="_src/index.html">
+            
+            <span><b>1.</b> Introduction</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> JavaScript: 从入门到闭包</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" >
+            
+            <span><b>2.1.</b> JavaScript 与其它相关技术</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="_src/overview.html">
+            
+            <span><b>2.1.1.</b> 概述: JavaScript, Flash, Java, Silverlight and ActiveX</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="_src/pre-coding.html">
+            
+            <span><b>2.1.2.</b> 磨刀不误砍柴工</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+            <span><b>2.2.</b> 起步</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="_src/setup-your-environmentmd.html">
+            
+                
+                    <a href="../_src/setup-your-environmentmd.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.1.</b>
+                        
+                        环境设置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="_src/hello-world.html">
+            
+                
+                    <a href="../_src/hello-world.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.2.</b>
+                        
+                        Hello, World!
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="_src/variables-and-statements.html">
+            
+                
+                    <a href="../_src/variables-and-statements.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.3.</b>
+                        
+                        变量和声明
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="_src/development.html">
+            
+            <span><b>2.2.4.</b> 浏览器开发工具</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="_src/user-interaction-alert-prompt-and-confirm.html">
+            
+                
+                    <a href="../_src/user-interaction-alert-prompt-and-confirm.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.5.</b>
+                        
+                        用户交互: alert, prompt 和 confirm
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" >
+            
+            <span><b>2.2.6.</b> 操作符与语句</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.6.1" data-path="_src/operators.html">
+            
+                
+                    <a href="../_src/operators.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.6.1.</b>
+                        
+                        操作符
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6.2" data-path="_src/comparison-operators-ifelse.html">
+            
+            <span><b>2.2.6.2.</b> 比较操作符, if..else</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6.3" data-path="_src/loops-and-switch.html">
+            
+                
+                    <a href="../_src/loops-and-switch.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.6.3.</b>
+                        
+                        循环和 switch
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="_src/functions-declarations-and-expressions.html">
+            
+                
+                    <a href="../_src/functions-declarations-and-expressions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        函数: 声明和表达式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+            <span><b>2.4.</b> 数据类型</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="_src/string.html">
+            
+                
+                    <a href="../_src/string.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        String
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="_src/number-math.html">
+            
+            <span><b>2.4.2.</b> Number, Math</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="_src/objects.html">
+            
+            <span><b>2.4.3.</b> Objects</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="_src/array.html">
+            
+                
+                    <a href="../_src/array.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.4.</b>
+                        
+                        Array
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="_src/object-conversion.html">
+            
+            <span><b>2.4.5.</b> 类型转换, toString and valueOf</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="_src/this.html">
+            
+            <span><b>2.5.</b> &quot;this&quot;的四种用法</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="_src/type-detection.html">
+            
+            <span><b>2.6.</b> 类型判断</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="_src/arguments.html">
+            
+                
+                    <a href="../_src/arguments.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        函数参数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="_src/static-variables-methods-decorators.html">
+            
+            <span><b>2.8.</b> 静态变量和方法</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" >
+            
+            <span><b>2.9.</b> 作用域与闭包</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="_src/initialization.html">
+            
+                
+                    <a href="../_src/initialization.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.1.</b>
+                        
+                        函数和变量的初始化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.9.2" data-path="_src/closures.html">
+            
+                
+                    <a href="../_src/closures.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.2.</b>
+                        
+                        闭包
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3" data-path="_src/with-operator.html">
+            
+            <span><b>2.9.3.</b> &quot;with&quot; 操作符</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="_src/decorators.html">
+            
+            <span><b>2.10.</b> 装饰模式</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+            <span><b>3.</b> DOM 与 事件</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="_src/adding-script-html.html">
+            
+                
+                    <a href="../_src/adding-script-html.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        在HTML中加入script标签
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="_src/browser-environment.html">
+            
+                
+                    <a href="../_src/browser-environment.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        浏览器环境
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+            <span><b>3.3.</b> DOM</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="_src/dom-nodes.html">
+            
+                
+                    <a href="../_src/dom-nodes.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.1.</b>
+                        
+                        DOM 节点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="_src/basic-dom-node-properties.html">
+            
+            <span><b>3.3.2.</b> DOM 遍历</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="_src/attributes-and-custom-properties.html">
+            
+                
+                    <a href="../_src/attributes-and-custom-properties.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.3.</b>
+                        
+                        节点 attributes 和 properties
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="_src/modifying-document.html">
+            
+            <span><b>3.3.4.</b> 修改文档</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="_src/document-write.html">
+            
+            <span><b>3.3.5.</b> 使用 document.write</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="_src/searching-elements-dom.html">
+            
+            <span><b>3.3.6.</b> DOM 元素查找</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.7" data-path="_src/more-references-forms-and-tables.html">
+            
+            <span><b>3.3.7.</b> Form 和 Table 的遍历技巧</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" >
+            
+            <span><b>3.4.</b> 视图与位置</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="_src/styles-and-classes-getcomputedstyle.html">
+            
+            <span><b>3.4.1.</b> 样式与class, getComputedStyle</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="_src/re-introducing-css-positioning.html">
+            
+            <span><b>3.4.2.</b> 再谈 CSS position</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="_src/metrics.html">
+            
+            <span><b>3.4.3.</b> 数值计算</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="_src/coordinates.html">
+            
+            <span><b>3.4.4.</b> 坐标</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" >
+            
+            <span><b>3.5.</b> 事件</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="_src/introduction-browser-events.html">
+            
+            <span><b>3.5.1.</b> 浏览器事件</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="_src/obtaining-event-object.html">
+            
+            <span><b>3.5.2.</b> 获取事件对象</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="_src/bubbling-and-capturing.html">
+            
+            <span><b>3.5.3.</b> 事件冒泡与捕获</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="_src/default-browser-action.html">
+            
+            <span><b>3.5.4.</b> 浏览器默认行为</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.5" data-path="_src/event-delegation.html">
+            
+            <span><b>3.5.5.</b> 事件代理</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.6" data-path="_src/mouse-events.html">
+            
+            <span><b>3.5.6.</b> 鼠标事件</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.7" data-path="_src/http:/javascript.info/tutorial/focus-blur.html">
+            
+            <span><b>3.5.7.</b> Focus/Blur: 方法与事件</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.8" data-path="_src/keyboard-events.html">
+            
+            <span><b>3.5.8.</b> 键盘事件</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> 面向对象编程</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="_src/inheritance.html">
+            
+            <span><b>4.1.</b> 原型继承</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="_src/native-prototypes.html">
+            
+            <span><b>4.2.</b> 扩展原生对象</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="_src/constructor.html">
+            
+            <span><b>4.3.</b> &quot;constructor&quot; 属性</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="_src/instanceof.html">
+            
+            <span><b>4.4.</b> &quot;instanceof&quot; 操作符</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" >
+            
+            <span><b>4.5.</b> 面向对象</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="_src/oop-concepts.html">
+            
+            <span><b>4.5.1.</b> 基本概念</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.2" data-path="_src/pseudo-classical-pattern.html">
+            
+            <span><b>4.5.2.</b> Pseudo-classical 模式</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.3" data-path="_src/all-one-constructor-pattern.html">
+            
+            <span><b>4.5.3.</b> All-in-one constructor 模式</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.4" data-path="_src/factory-constructor-pattern.html">
+            
+            <span><b>4.5.4.</b> Factory constructor 模式</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="_src/binding.html">
+            
+            <span><b>4.6.</b> 早绑定和晚绑定</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="_src/exceptions.html">
+            
+            <span><b>4.7.</b> 异常</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" >
+            
+            <span><b>5.</b> 定时</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="_src/datetime-functions.html">
+            
+            <span><b>5.1.</b> Date/Time 函数</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="_src/settimeout-setinterval.html">
+            
+            <span><b>5.2.</b> 理解定时器: setTimeout 与 setInterval</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="_src/events-and-timing-depth.html">
+            
+            <span><b>5.3.</b> 深入理解事件和定时机制</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" >
+            
+            <span><b>6.</b> 框架和窗口</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="_src/popup-windows.html">
+            
+            <span><b>6.1.</b> 弹窗</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="_src/browser-window-properties-and-methods.html">
+            
+            <span><b>6.2.</b> 查看window属性和方法</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="_src/focus-blur.html">
+            
+            <span><b>6.3.</b> Focus/blur 方法和事件</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="_src/frames-and-iframes.html">
+            
+            <span><b>6.4.</b> 框架和iframe</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="_src/same-origin-security-policy.html">
+            
+            <span><b>6.5.</b> 同源策略</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="_src/cross-window-messaging-with-postmessage.html">
+            
+            <span><b>6.6.</b> postMessage跨窗口通信</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="_src/clickjacking.html">
+            
+            <span><b>6.7.</b> Clickjacking 攻击与 X-Frame-Options</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" >
+            
+            <span><b>7.</b> JavaScript 中的正则表达式</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="_src/regexp-introduction.html">
+            
+            <span><b>7.1.</b> 介绍</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="_src/character-classes.html">
+            
+            <span><b>7.2.</b> 字符类</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="_src/special-characters.html">
+            
+            <span><b>7.3.</b> 特殊字符</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="_src/flags.html">
+            
+            <span><b>7.4.</b> 标记位</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="_src/character-sets-and-ranges.html">
+            
+            <span><b>7.5.</b> 字符集与范围</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="_src/numeric-quantifiers.html">
+            
+            <span><b>7.6.</b> 数字</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="_src/quantifiers-plus-star-question.html">
+            
+            <span><b>7.7.</b> +, *, ?</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="_src/greedy-and-lazy.html">
+            
+            <span><b>7.8.</b> 贪婪模式与懒惰模式</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="_src/ahchors-and-multiline-mode.html">
+            
+            <span><b>7.9.</b> 标记位和多行模式</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.10" data-path="_src/word-boundary.html">
+            
+            <span><b>7.10.</b> 单词边界</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11" data-path="_src/infinite-backtracking-problem.html">
+            
+            <span><b>7.11.</b> 无限回溯问题</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.12" data-path="_src/groups.html">
+            
+            <span><b>7.12.</b> 分组</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.13" data-path="_src/alternation.html">
+            
+            <span><b>7.13.</b> 替换</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.14" data-path="_src/regular-expressions-methods.html">
+            
+            <span><b>7.14.</b> 常见表达式方法</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.15" data-path="_src/practice.html">
+            
+            <span><b>7.15.</b> 实践</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" >
+            
+            <span><b>8.</b> 其他</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="_src/onload-ondomcontentloaded.html">
+            
+            <span><b>8.1.</b> onLoad 与 onDOMContentLoaded</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="_src/animation.html">
+            
+            <span><b>8.2.</b> 动画</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="_src/memory-leaks.html">
+            
+            <span><b>8.3.</b> 内存泄露</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Javascipt 学习指南</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <blockquote>
+<p>&#x8BD1;&#x8005;: &#x5F90;&#x6708;&#x661F;</p>
+</blockquote>
+<p><code>[&#x5907;&#x6CE8;1]</code>&#xFF1A;&#x4E3A;&#x907F;&#x514D;&#x9020;&#x6210;&#x8BEF;&#x8BFB;&#xFF0C;&#x539F;&#x6587;&#x4E2D;  <code>LexicalEnvironment</code> (&#x8BCD;&#x6CD5;&#x73AF;&#x5883;&#xFF09;&#x3001;<code>Scope</code>(&#x4F5C;&#x7528;&#x57DF;)&#x4FDD;&#x7559;
+<code>[&#x5907;&#x6CE8;2]</code>&#xFF1A;[2]&#x5904;&#x53EF;&#x80FD;&#x7FFB;&#x8BD1;&#x4E0D;&#x51C6;&#xFF0C;&#x4E3A;&#x907F;&#x514D;&#x9020;&#x6210;&#x8BEF;&#x8BFB;&#xFF0C;&#x82F1;&#x6587;&#x90E8;&#x5206;&#x88AB;&#x653E;&#x5728;&#x62EC;&#x53F7;&#x5185;</p>
+<hr>
+<h3 id="&#x95ED;&#x5305;">&#x95ED;&#x5305;</h3>
+<h4 id="1-&#x8BBF;&#x95EE;&#x5916;&#x90E8;&#x53D8;&#x91CF;">1. &#x8BBF;&#x95EE;&#x5916;&#x90E8;&#x53D8;&#x91CF;</h4>
+<h4 id="2-&#x5D4C;&#x5957;&#x51FD;&#x6570;">2. &#x5D4C;&#x5957;&#x51FD;&#x6570;</h4>
+<h4 id="3-&#x95ED;&#x5305;">3. &#x95ED;&#x5305;</h4>
+<ol>
+<li>&#x8BCD;&#x6CD5;&#x73AF;&#x5883;&#xFF08;<code>LexicalEnvironment</code> &#xFF09;&#x7684;&#x53EF;&#x53D8;&#x6027;&#xFF1B;</li>
+<li>&#x58F0;&#x540D;&#x8FDC;&#x626C;&#x7684;&#x95ED;&#x5408;&#x56DE;&#x8DEF;&#xFF1B;</li>
+<li>&#x4F5C;&#x7528;&#x57DF;&#xFF08;<code>[[Scope]]</code>&#xFF09;&#x7684;&#x65B0;&#x529F;&#x80FD;&#xFF1B;<h4 id="4-&#x603B;&#x7ED3;&#xFF1B;">4. &#x603B;&#x7ED3;&#xFF1B;</h4>
+</li>
+</ol>
+<hr>
+<p>&#x4ECE;<a href="http://javascript.info/tutorial/initialization" target="_blank">&#x524D;&#x9762;&#x7684;&#x6587;&#x7AE0;&#x4E2D;</a>,&#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x5230;<code>LexicalEnvironment</code>&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x3002;
+&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x8BA8;&#x8BBA;&#x8BBF;&#x95EE;&#x5916;&#x90E8;&#x53D8;&#x91CF;&#x548C;&#x5D4C;&#x5957;&#x51FD;&#x6570;&#x3002;&#x6DF1;&#x5165;&#x7684;&#x4E86;&#x89E3;&#x95ED;&#x5305;&#x7684;&#x81EA;&#x52A8;&#x641C;&#x5BFB;&#x673A;&#x5236;&#x3002;</p>
+<h4 id="&#x8BBF;&#x95EE;&#x5916;&#x90E8;&#x53D8;&#x91CF;">&#x8BBF;&#x95EE;&#x5916;&#x90E8;&#x53D8;&#x91CF;</h4>
+<p>&#x5982;&#x679C;&#x8BBF;&#x95EE;&#x7684;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x4E0D;&#x662F;&#x672C;&#x5730;&#x53D8;&#x91CF;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x5C31;&#x50CF;&#x8FD9;&#x91CC;&#xFF1A;</p>
+<pre><code>var a = 5;
+function f(){
+    alert(a);
+}
+</code></pre><p>&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x89E3;&#x91CA;&#x5668;&#x53D1;&#x73B0;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x4E00;&#x4E2A;&#x5916;&#x90E8;&#x53D8;&#x91CF;&#x3002;
+&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x7531;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF1A;</p>
+<ol>
+<li><p>&#x9996;&#x5148;&#xFF0C;&#x51FD;&#x6570;f&#x4E0D;&#x4F1A;&#x5728;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;&#x7A7A;&#x95F4;&#x4E2D;&#x88AB;&#x521B;&#x5EFA;
+&#x73B0;&#x5728;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;<code>LexicalEnvironment</code>&#x5BF9;&#x8C61;&#x3002;&#x5728;&#x4E0A;&#x8FF0;&#x60C5;&#x51B5;&#x4E2D;&#xFF0C;&#x5B83;&#x5C5E;&#x4E8E;window&#xFF08;&#x5F53;&#x51FD;&#x6570;&#x88AB;&#x521B;&#x5EFA;&#x65F6;&#xFF0C;a&#x662F;&#x672A;&#x5B9A;&#x4E49;&#x7684;&#xFF09;&#x3002;
+<img src="http://javascript.info/files/tutorial/intro/scope/le_window1.png" alt="">
+&#x5F53;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x88AB;&#x521B;&#x5EFA;&#x65F6;&#xFF0C;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x5C5E;&#x6027;&#xFF0C;&#x53EB;&#x505A;<code>[[Scope]]</code>&#xFF0C;&#x5B83;&#x4EE3;&#x8868;&#x5F53;&#x524D;&#x7684;&#x8BCD;&#x6CD5;&#x73AF;&#x5883;&#x3002;
+<img src="http://javascript.info/files/tutorial/intro/scope/le_window2.png" alt=""></p>
+</li>
+<li><p>&#x968F;&#x540E;&#xFF0C;&#x5F53;&#x51FD;&#x6570;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x521B;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;<code>LexicalEnvironment</code>&#x5E76;&#x4E14;&#x5C06;&#x5B83;&#x548C;<code>[[Scope]]</code>&#x8FDE;&#x63A5;&#x8D77;&#x6765;&#x3002;
+&#x56E0;&#x6B64;&#xFF0C;&#x5F53;&#x5B83;&#x5728;&#x5F53;&#x524D;&#x7684;&#x51FD;&#x6570;&#x4E2D;&#x627E;&#x4E0D;&#x5230;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x4ED6;&#x4F1A;&#x7EE7;&#x7EED;&#x5411;&#x5916;&#x641C;&#x7D22;&#xFF1A;
+<img src="http://javascript.info/files/tutorial/intro/scope/le_window3.png" alt=""></p>
+</li>
+</ol>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x53EF;&#x8BFB;&#x53D8;&#x91CF;&#xFF0C;&#x5728;&#x5176;&#x4ED6;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x90FD;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x4F1A;&#x62A5;&#x9519;&#x3002;</p>
+<pre><code>function f(){
+    alert(x);//&#x8BFB;&#x53D6;&#x5230;x&#x5374;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x56E0;&#x4E3A;&#x4E0D;&#x5B58;&#x5728;x
+}
+</code></pre><p>&#x5728;&#x67D0;&#x4E9B;&#x8BED;&#x8A00;&#x60C5;&#x5883;&#x4E0B;&#x4E0D;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&#x5982;&#x679C;&#x6CA1;&#x6709;x&#xFF0C;typeof x&#x5C06;&#x8FD4;&#x56DE;undefined&#xFF0C;&#x4F46;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x4F8B;&#x5916;&#x3002;
+&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x88AB;&#x5B9A;&#x4E49;&#x4E86;&#xFF0C;&#x5374;&#x6CA1;&#x6709;&#x53D1;&#x73B0;&#x5728;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x88AB;&#x58F0;&#x660E;&#xFF0C;&#x90A3;&#x4E48;&#x4E45;&#x76F8;&#x5F53;&#x4E8E;&#x5B83;&#x88AB;&#x521B;&#x5EFA;&#x5728;&#x4E86;&#x6700;&#x5916;&#x5C42;&#x7684;window&#x91CC;&#x9762;&#x3002;</p>
+<pre><code>function f(){
+    x = 5;//&#x5C06;x&#x653E;&#x5728;&#x4E86;window&#x91CC;&#x9762;
+}
+</code></pre><h4 id="&#x5D4C;&#x5957;&#x51FD;&#x6570;">&#x5D4C;&#x5957;&#x51FD;&#x6570;</h4>
+<p>&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x88AB;&#x5D4C;&#x5957;&#x5728;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x91CC;&#x9762;&#xFF0C;&#x5F62;&#x6210;&#x4E00;&#x4E2A;<code>LexicalEnvironment</code>&#x94FE;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x53EB;&#x505A;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x3002;</p>
+<pre><code>var a=1;
+function f(){
+    function g(){
+         alert(a);
+    }
+    return g;
+}
+var func = f();
+func();//1
+</code></pre><p>&#x5F62;&#x6210;<code>LexicalEnvironment</code>&#x94FE;&#xFF08;&#x7531;&#x5185;&#x5230;&#x5916;&#xFF09;&#xFF1A;</p>
+<pre><code>// LexicalEnvironment = window = {a:1, f: function}
+var a=1;
+function f(){
+    // LexicalEnvironment = {g:function}
+    function g(){
+        // LexicalEnvironment = {}
+         alert(a);
+    }
+    return g;
+}
+</code></pre><p>&#x56E0;&#x6B64;&#x3002;&#x51FD;&#x6570;g&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x51FD;&#x6570;f&#x548C;&#x53D8;&#x91CF;a&#x3002;</p>
+<blockquote>
+<h5 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x51FD;&#x6570;sum&#xFF0C;&#x4F7F;&#x4ED6;&#x5B9E;&#x73B0;&#x8FD9;&#x6837;&#x7684;&#x529F;&#x80FD;&#xFF1A;sumab--ab">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x51FD;&#x6570;sum&#xFF0C;&#x4F7F;&#x4ED6;&#x5B9E;&#x73B0;&#x8FD9;&#x6837;&#x7684;&#x529F;&#x80FD;&#xFF1A;sum(a)(b) = a+b.</h5>
+<h5 id="&#x662F;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x8BED;&#x6CD5;&#x662F;&#x53CC;&#x62EC;&#x53F7;&#x3002;&#x6709;&#x8DA3;&#x5417;&#xFF1F;&#x6BD4;&#x5982;&#xFF1A;">&#x662F;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x8BED;&#x6CD5;&#x662F;&#x53CC;&#x62EC;&#x53F7;&#x3002;&#x6709;&#x8DA3;&#x5417;&#xFF1F;&#x6BD4;&#x5982;&#xFF1A;</h5>
+<pre><code>sum(1)(2) = 3;
+sum(5)(-1) = 4
+</code></pre><h5 id="&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;">&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;</h5>
+<h5 id="&#x601D;&#x8DEF;&#x662F;&#xFF1A;sum&#x51FD;&#x6570;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5373;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;a&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x3002;">&#x601D;&#x8DEF;&#x662F;&#xFF1A;sum&#x51FD;&#x6570;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5373;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;a&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x3002;</h5>
+<h5 id="&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x505A;&#xFF1A;">&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x505A;&#xFF1A;</h5>
+<pre><code>function sum(a) {
+    return function(b) { // takes a from outer LexicalEnvironment
+        return a+b;
+    }
+}
+alert( sum(1)(2) );
+alert( sum(5)(-1) );
+</code></pre><h5 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x51FD;&#x6570;sum&#xFF0C;&#x4F7F;&#x4ED6;&#x5B9E;&#x73B0;&#x8FD9;&#x6837;&#x7684;&#x529F;&#x80FD;&#xFF1A;sumab--ab&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x6709;&#x65E0;&#x6570;&#x4E2A;&#x62EC;&#x53F7;&#xFF1A;">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x51FD;&#x6570;sum&#xFF0C;&#x4F7F;&#x4ED6;&#x5B9E;&#x73B0;&#x8FD9;&#x6837;&#x7684;&#x529F;&#x80FD;&#xFF1A;sum(a)(b) = a+b,&#x5E76;&#x4E14;<strong>&#x53EF;&#x4EE5;&#x6709;&#x65E0;&#x6570;&#x4E2A;&#x62EC;&#x53F7;</strong>&#xFF1A;</h5>
+<h5 id="&#x6BD4;&#x5982;&#xFF1A;">&#x6BD4;&#x5982;&#xFF1A;</h5>
+<pre><code>sum(1)(2) = 3;
+sum(5)(-1)(2) = 6;
+sum(6)(-1)(-2)(-3) = 0
+sum(0)(1)(2)(3)(4)(5) = 15
+</code></pre><h5 id="&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;">&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;</h5>
+<h5 id="&#x4E3A;&#x4E86;&#x4F7F;sum1&#x53EF;&#x4EE5;&#x50CF;sum12&#x4E00;&#x6837;&#x8C03;&#x7528;&#xFF0C;&#x5B83;&#x5FC5;&#x987B;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;">&#x4E3A;&#x4E86;&#x4F7F;sum(1)&#x53EF;&#x4EE5;&#x50CF;sum(1)(2)&#x4E00;&#x6837;&#x8C03;&#x7528;&#xFF0C;&#x5B83;&#x5FC5;&#x987B;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;</h5>
+<h5 id="&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x65E2;&#x53EF;&#x4EE5;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x88AB;&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x6709;&#x7528;&#x7684;&#x6570;&#x5B57;&#x7C7B;&#x578B;converted-to-a-number-with-valueof2">&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x65E2;&#x53EF;&#x4EE5;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x88AB;&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x6709;&#x7528;&#x7684;&#x6570;&#x5B57;&#x7C7B;&#x578B;<code>(converted to a number with valueOf)[2]</code>.</h5>
+<h5 id="&#x90A3;&#x4E48;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5C31;&#x4E0D;&#x8A00;&#x800C;&#x55BB;&#x4E86;&#xFF1A;">&#x90A3;&#x4E48;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5C31;&#x4E0D;&#x8A00;&#x800C;&#x55BB;&#x4E86;&#xFF1A;</h5>
+<pre><code>function sum(a) {
+    var sum = a;
+    function f(b) { 
+        sum += b;
+        return f;
+    }
+    f.toString = function() { returnsum };
+    return f;
+}
+alert( sum(1)(2) );  // 3
+alert( sum(5)(-1)(2) );  // 6
+alert( sum(6)(-1)(-2)(-3) );  // 0
+alert( sum(0)(1)(2)(3)(4)(5) );  // 15
+</code></pre><h4 id="&#x95ED;&#x5305;">&#x95ED;&#x5305;</h4>
+<p>&#x5D4C;&#x5957;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5728;&#x5916;&#x9762;&#x7684;&#x51FD;&#x6570;&#x6267;&#x884C;&#x5B8C;&#x4E4B;&#x540E;&#x4F9D;&#x65E7;&#x6709;&#x6548;&#xFF1A;</p>
+<pre><code>function User(name) {
+    this.say = function(phrase) {
+        alert(name + &apos; says: &apos;+ phrase)&#xFF1B;
+    }
+}
+varuser = new User(&apos;John&apos;)&#xFF1B;
+</code></pre><p>&#x6807;&#x8BB0;&#x51FA;<code>LexicalEnvironment</code>&#xFF1A;
+<img src="http://javascript.info/files/tutorial/intro/scope/user1.png" alt="">
+<strong>&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x91CC;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4E0E;&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x53D8;&#x91CF;&#x65E0;&#x5173;&#x3002;</strong> &#x5B83;&#x4E0D;&#x4F5C;&#x7528;&#x5728;&#x8FD9;&#x91CC;&#x3002;
+&#x6B63;&#x5982;&#x6211;&#x4EEC;&#x6240;&#x770B;&#x5230;&#x7684;&#xFF0C;this.say&#x662F;User&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x6240;&#x4EE5;&#x5F53;User&#x51FD;&#x6570;&#x6267;&#x884C;&#x5B8C;&#x4E4B;&#x540E;&#xFF0C;&#x5B83;&#x4F9D;&#x65E7;&#x662F;&#x6709;&#x6548;&#x7684;&#x3002;
+&#x4F60;&#x5E94;&#x8BE5;&#x8FD8;&#x8BB0;&#x5F97;&#xFF0C;&#x5F53;this.say&#x88AB;&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5C31;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5185;&#x90E8;&#x7A7A;&#x95F4;&#xFF08;&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x5982;&#x6B64;&#xFF09;&#xFF0C;&#x7528;this.say&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x4EE3;&#x66FF;&#x5F53;&#x524D;&#x7684;&#x8BCD;&#x6CD5;&#x73AF;&#x5883;<code>(gets an internal reference this.say.[[Scope]] to current LexicalEnvironment )[2]</code>&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x5F53;&#x524D;&#x7684;&#x8BCD;&#x6CD5;&#x73AF;&#x5883;&#x4E0B;&#xFF0C;User&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x5C31;&#x88AB;&#x4FDD;&#x5B58;&#x5728;&#x4E86;&#x5B58;&#x50A8;&#x5668;&#x4E2D;&#x3002;&#x6240;&#x6709;User&#x51FD;&#x6570;&#x7684;&#x53D8;&#x91CF;&#x90FD;&#x662F;&#x8FD9;&#x6837;&#xFF0C;&#x5B83;&#x4EEC;&#x90FD;&#x4F1A;&#x88AB;&#x4FDD;&#x5B58;&#x8D77;&#x6765;&#xFF0C;&#x4E0D;&#x4F1A;&#x968F;&#x610F;&#x88AB;&#x6BC1;&#x574F;&#x3002;
+&#x91CD;&#x70B9;&#x662F;&#x8981;&#x786E;&#x4FDD;&#x5185;&#x90E8;&#x51FD;&#x6570;&#x4EE5;&#x540E;&#x8981;&#x8BBF;&#x95EE;&#x5916;&#x90E8;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#x662F;&#x53EF;&#x884C;&#x7684;&#x3002;</p>
+<h5 id="1&#x5185;&#x90E8;&#x51FD;&#x6570;&#x4FDD;&#x5B58;&#x7684;&#x4E1C;&#x897F;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x4E8E;&#x5916;&#x90E8;&#x73AF;&#x5883;&#xFF1B;">1.&#x5185;&#x90E8;&#x51FD;&#x6570;&#x4FDD;&#x5B58;&#x7684;&#x4E1C;&#x897F;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x4E8E;&#x5916;&#x90E8;&#x73AF;&#x5883;&#xFF1B;</h5>
+<h5 id="2&#x5373;&#x4F7F;&#x5916;&#x90E8;&#x51FD;&#x6570;&#x6267;&#x884C;&#x5B8C;&#x4E86;&#xFF0C;&#x5185;&#x90E8;&#x51FD;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5916;&#x90E8;&#x51FD;&#x6570;&#x8BBF;&#x95EE;&#x4EFB;&#x4F55;&#x53D8;&#x91CF;&#xFF1B;">2.&#x5373;&#x4F7F;&#x5916;&#x90E8;&#x51FD;&#x6570;&#x6267;&#x884C;&#x5B8C;&#x4E86;&#xFF0C;&#x5185;&#x90E8;&#x51FD;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5916;&#x90E8;&#x51FD;&#x6570;&#x8BBF;&#x95EE;&#x4EFB;&#x4F55;&#x53D8;&#x91CF;&#xFF1B;</h5>
+<h5 id="3&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x4FDD;&#x5B58;lexicalenvironment&#x548C;&#x4ED6;&#x6240;&#x6709;&#x7684;&#x5C5E;&#x6027;&#xFF08;&#x53D8;&#x91CF;&#xFF09;&#xFF0C;&#x77E5;&#x9053;&#x6709;&#x5185;&#x90E8;&#x7684;&#x51FD;&#x6570;&#x6765;&#x8BBF;&#x95EE;&#x5B83;&#x3002;">3.&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x4FDD;&#x5B58;<code>LexicalEnvironment</code>&#x548C;&#x4ED6;&#x6240;&#x6709;&#x7684;&#x5C5E;&#x6027;&#xFF08;&#x53D8;&#x91CF;&#xFF09;&#xFF0C;&#x77E5;&#x9053;&#x6709;&#x5185;&#x90E8;&#x7684;&#x51FD;&#x6570;&#x6765;&#x8BBF;&#x95EE;&#x5B83;&#x3002;</h5>
+<h5 id="&#x8FD9;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;&#x95ED;&#x5305;&#x3002;">&#x8FD9;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;&#x95ED;&#x5305;&#x3002;</h5>
+<h4 id="lexicalenvironment&#x7684;&#x53EF;&#x53D8;&#x6027;"><code>LexicalEnvironment</code>&#x7684;&#x53EF;&#x53D8;&#x6027;</h4>
+<p>&#x5F53;&#x4E00;&#x4E9B;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5171;&#x4EAB;&#x5916;&#x90E8;&#x73AF;&#x5883;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B83;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x5B83;&#x7684;&#x5C5E;&#x6027;&#x3002;
+&#x5728;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x7531;&#x4E8E;this.say&#x7684;&#x4F5C;&#x7528;&#xFF0C; this.fixName&#x6539;&#x53D8;&#x4E86;name&#xFF1A;</p>
+<pre><code>function User(name){
+    this.fixName = function(){
+        name = &apos;Mr.&apos;+ name.toUpperCase();
+    }
+    this.say = function(phrase) {
+        alert(name + &apos; says: &apos;+ phrase)
+    }
+}
+var user = new User(&apos;John&apos;);
+user.fixName();
+user.say(&quot;I&apos;m alive!&quot;) ; // Mr.JOHN says: I&apos;m alive!
+</code></pre></blockquote>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../_src/initialization.html" class="navigation navigation-prev " aria-label="Previous page: 函数和变量的初始化"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../_src/adding-script-html.html" class="navigation navigation-next " aria-label="Next page: 在HTML中加入script标签"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

@@ -1,4 +1,3 @@
-# DOM节点
 > 译者: 丁贝津
 
 Ilya Kantor

@@ -36,7 +36,7 @@
    * [浏览器环境](_src/browser-environment.md)
    * DOM
        * [DOM 节点](_src/dom-nodes.md)
-       * [DOM 遍历](_src/basic-dom-node-properties.md)
+       * [DOM 遍历](_src/traversing-the-dom.md)
        * [基本节点属性](_src/basic-dom-node-properties.md)
        * [节点 attributes 和 properties](_src/attributes-and-custom-properties.md)
        * [修改文档](_src/modifying-document.md)

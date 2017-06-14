@@ -11,7 +11,7 @@ Javascipt 学习指南
 4. push 到 github
 5. 提交 PullRequest
 
-参与的同学在issues里认领文章
+参与的同学在[issues](https://github.com/jirengu-inc/javascript.info/issues/1)里回复认领文章明细
 
 
 

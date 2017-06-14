@@ -1,1039 +1,1560 @@
+
 <!DOCTYPE HTML>
-<html lang="en" >
-    
+<html lang="" >
     <head>
-        
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>函数和变量的初始化 | Javascipt 学习指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>函数和变量的初始化 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.2">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
         
+    
     <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+    
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+    
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
-        
     
+        
     
 
         
     
     
-    <link rel="next" href="../_src/closures.html" />
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
     
+    <link rel="next" href="closures.html" />
     
-    <link rel="prev" href="../_src/arguments.html" />
     
 
-        
     </head>
     <body>
         
+<div class="book">
+    <div class="book-summary">
         
-    <div class="book" data-level="2.9.1" data-chapter-title="函数和变量的初始化" data-filepath="_src/initialization.md" data-basepath=".." data-revision="Thu Jul 21 2016 14:22:50 GMT+0800 (CST)">
-    
-
-<div class="book-summary">
-    <nav role="navigation">
-        <ul class="summary">
             
-            
-            
-            
-
-            
-
-            
-    
-        <li class="chapter " data-level="0" data-path="index.html">
-            
-                
-                    <a href="../index.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                        Introduction
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1" data-path="_src/index.html">
-            
-            <span><b>1.</b> Introduction</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2" >
-            
-            <span><b>2.</b> JavaScript: 从入门到闭包</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.1" >
-            
-            <span><b>2.1.</b> JavaScript 与其它相关技术</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.1.1" data-path="_src/overview.html">
-            
-            <span><b>2.1.1.</b> 概述: JavaScript, Flash, Java, Silverlight and ActiveX</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.1.2" data-path="_src/pre-coding.html">
-            
-            <span><b>2.1.2.</b> 磨刀不误砍柴工</span>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2" >
-            
-            <span><b>2.2.</b> 起步</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.2.1" data-path="_src/setup-your-environmentmd.html">
-            
-                
-                    <a href="../_src/setup-your-environmentmd.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.2.1.</b>
-                        
-                        环境设置
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.2" data-path="_src/hello-world.html">
-            
-                
-                    <a href="../_src/hello-world.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.2.2.</b>
-                        
-                        Hello, World!
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.3" data-path="_src/variables-and-statements.html">
-            
-                
-                    <a href="../_src/variables-and-statements.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.2.3.</b>
-                        
-                        变量和声明
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.4" data-path="_src/development.html">
-            
-            <span><b>2.2.4.</b> 浏览器开发工具</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.5" data-path="_src/user-interaction-alert-prompt-and-confirm.html">
-            
-                
-                    <a href="../_src/user-interaction-alert-prompt-and-confirm.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.2.5.</b>
-                        
-                        用户交互: alert, prompt 和 confirm
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.6" >
-            
-            <span><b>2.2.6.</b> 操作符与语句</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.2.6.1" data-path="_src/operators.html">
-            
-                
-                    <a href="../_src/operators.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.2.6.1.</b>
-                        
-                        操作符
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.6.2" data-path="_src/comparison-operators-ifelse.html">
-            
-            <span><b>2.2.6.2.</b> 比较操作符, if..else</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.6.3" data-path="_src/loops-and-switch.html">
-            
-                
-                    <a href="../_src/loops-and-switch.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.2.6.3.</b>
-                        
-                        循环和 switch
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2.3" data-path="_src/functions-declarations-and-expressions.html">
-            
-                
-                    <a href="../_src/functions-declarations-and-expressions.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.3.</b>
-                        
-                        函数: 声明和表达式
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.4" >
-            
-            <span><b>2.4.</b> 数据类型</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.4.1" data-path="_src/string.html">
-            
-                
-                    <a href="../_src/string.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.4.1.</b>
-                        
-                        String
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.4.2" data-path="_src/number-math.html">
-            
-            <span><b>2.4.2.</b> Number, Math</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.4.3" data-path="_src/objects.html">
-            
-            <span><b>2.4.3.</b> Objects</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.4.4" data-path="_src/array.html">
-            
-                
-                    <a href="../_src/array.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.4.4.</b>
-                        
-                        Array
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.4.5" data-path="_src/object-conversion.html">
-            
-            <span><b>2.4.5.</b> 类型转换, toString and valueOf</span>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5" data-path="_src/this.html">
-            
-            <span><b>2.5.</b> &quot;this&quot;的四种用法</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.6" data-path="_src/type-detection.html">
-            
-            <span><b>2.6.</b> 类型判断</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.7" data-path="_src/arguments.html">
-            
-                
-                    <a href="../_src/arguments.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.7.</b>
-                        
-                        函数参数
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.8" data-path="_src/static-variables-methods-decorators.html">
-            
-            <span><b>2.8.</b> 静态变量和方法</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.9" >
-            
-            <span><b>2.9.</b> 作用域与闭包</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter active" data-level="2.9.1" data-path="_src/initialization.html">
-            
-                
-                    <a href="../_src/initialization.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.9.1.</b>
-                        
-                        函数和变量的初始化
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.9.2" data-path="_src/closures.html">
-            
-                
-                    <a href="../_src/closures.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.9.2.</b>
-                        
-                        闭包
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.9.3" data-path="_src/with-operator.html">
-            
-            <span><b>2.9.3.</b> &quot;with&quot; 操作符</span>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2.10" data-path="_src/decorators.html">
-            
-            <span><b>2.10.</b> 装饰模式</span>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="3" >
-            
-            <span><b>3.</b> DOM 与 事件</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.1" data-path="_src/adding-script-html.html">
-            
-                
-                    <a href="../_src/adding-script-html.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.1.</b>
-                        
-                        在HTML中加入script标签
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.2" data-path="_src/browser-environment.html">
-            
-                
-                    <a href="../_src/browser-environment.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.2.</b>
-                        
-                        浏览器环境
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.3" >
-            
-            <span><b>3.3.</b> DOM</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.3.1" data-path="_src/dom-nodes.html">
-            
-                
-                    <a href="../_src/dom-nodes.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.3.1.</b>
-                        
-                        DOM 节点
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.3.2" data-path="_src/basic-dom-node-properties.html">
-            
-            <span><b>3.3.2.</b> DOM 遍历</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.3.3" data-path="_src/attributes-and-custom-properties.html">
-            
-                
-                    <a href="../_src/attributes-and-custom-properties.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.3.3.</b>
-                        
-                        节点 attributes 和 properties
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.3.4" data-path="_src/modifying-document.html">
-            
-            <span><b>3.3.4.</b> 修改文档</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.3.5" data-path="_src/document-write.html">
-            
-            <span><b>3.3.5.</b> 使用 document.write</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.3.6" data-path="_src/searching-elements-dom.html">
-            
-            <span><b>3.3.6.</b> DOM 元素查找</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.3.7" data-path="_src/more-references-forms-and-tables.html">
-            
-            <span><b>3.3.7.</b> Form 和 Table 的遍历技巧</span>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="3.4" >
-            
-            <span><b>3.4.</b> 视图与位置</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.4.1" data-path="_src/styles-and-classes-getcomputedstyle.html">
-            
-            <span><b>3.4.1.</b> 样式与class, getComputedStyle</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.4.2" data-path="_src/re-introducing-css-positioning.html">
-            
-            <span><b>3.4.2.</b> 再谈 CSS position</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.4.3" data-path="_src/metrics.html">
-            
-            <span><b>3.4.3.</b> 数值计算</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.4.4" data-path="_src/coordinates.html">
-            
-            <span><b>3.4.4.</b> 坐标</span>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="3.5" >
-            
-            <span><b>3.5.</b> 事件</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.5.1" data-path="_src/introduction-browser-events.html">
-            
-            <span><b>3.5.1.</b> 浏览器事件</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.5.2" data-path="_src/obtaining-event-object.html">
-            
-            <span><b>3.5.2.</b> 获取事件对象</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.5.3" data-path="_src/bubbling-and-capturing.html">
-            
-            <span><b>3.5.3.</b> 事件冒泡与捕获</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.5.4" data-path="_src/default-browser-action.html">
-            
-            <span><b>3.5.4.</b> 浏览器默认行为</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.5.5" data-path="_src/event-delegation.html">
-            
-            <span><b>3.5.5.</b> 事件代理</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.5.6" data-path="_src/mouse-events.html">
-            
-            <span><b>3.5.6.</b> 鼠标事件</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.5.7" data-path="_src/http:/javascript.info/tutorial/focus-blur.html">
-            
-            <span><b>3.5.7.</b> Focus/Blur: 方法与事件</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.5.8" data-path="_src/keyboard-events.html">
-            
-            <span><b>3.5.8.</b> 键盘事件</span>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="4" >
-            
-            <span><b>4.</b> 面向对象编程</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1" data-path="_src/inheritance.html">
-            
-            <span><b>4.1.</b> 原型继承</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.2" data-path="_src/native-prototypes.html">
-            
-            <span><b>4.2.</b> 扩展原生对象</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.3" data-path="_src/constructor.html">
-            
-            <span><b>4.3.</b> &quot;constructor&quot; 属性</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.4" data-path="_src/instanceof.html">
-            
-            <span><b>4.4.</b> &quot;instanceof&quot; 操作符</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.5" >
-            
-            <span><b>4.5.</b> 面向对象</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.5.1" data-path="_src/oop-concepts.html">
-            
-            <span><b>4.5.1.</b> 基本概念</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.5.2" data-path="_src/pseudo-classical-pattern.html">
-            
-            <span><b>4.5.2.</b> Pseudo-classical 模式</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.5.3" data-path="_src/all-one-constructor-pattern.html">
-            
-            <span><b>4.5.3.</b> All-in-one constructor 模式</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.5.4" data-path="_src/factory-constructor-pattern.html">
-            
-            <span><b>4.5.4.</b> Factory constructor 模式</span>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="4.6" data-path="_src/binding.html">
-            
-            <span><b>4.6.</b> 早绑定和晚绑定</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.7" data-path="_src/exceptions.html">
-            
-            <span><b>4.7.</b> 异常</span>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="5" >
-            
-            <span><b>5.</b> 定时</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1" data-path="_src/datetime-functions.html">
-            
-            <span><b>5.1.</b> Date/Time 函数</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5.2" data-path="_src/settimeout-setinterval.html">
-            
-            <span><b>5.2.</b> 理解定时器: setTimeout 与 setInterval</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3" data-path="_src/events-and-timing-depth.html">
-            
-            <span><b>5.3.</b> 深入理解事件和定时机制</span>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="6" >
-            
-            <span><b>6.</b> 框架和窗口</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="6.1" data-path="_src/popup-windows.html">
-            
-            <span><b>6.1.</b> 弹窗</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6.2" data-path="_src/browser-window-properties-and-methods.html">
-            
-            <span><b>6.2.</b> 查看window属性和方法</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6.3" data-path="_src/focus-blur.html">
-            
-            <span><b>6.3.</b> Focus/blur 方法和事件</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6.4" data-path="_src/frames-and-iframes.html">
-            
-            <span><b>6.4.</b> 框架和iframe</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6.5" data-path="_src/same-origin-security-policy.html">
-            
-            <span><b>6.5.</b> 同源策略</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6.6" data-path="_src/cross-window-messaging-with-postmessage.html">
-            
-            <span><b>6.6.</b> postMessage跨窗口通信</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6.7" data-path="_src/clickjacking.html">
-            
-            <span><b>6.7.</b> Clickjacking 攻击与 X-Frame-Options</span>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7" >
-            
-            <span><b>7.</b> JavaScript 中的正则表达式</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1" data-path="_src/regexp-introduction.html">
-            
-            <span><b>7.1.</b> 介绍</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2" data-path="_src/character-classes.html">
-            
-            <span><b>7.2.</b> 字符类</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.3" data-path="_src/special-characters.html">
-            
-            <span><b>7.3.</b> 特殊字符</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.4" data-path="_src/flags.html">
-            
-            <span><b>7.4.</b> 标记位</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.5" data-path="_src/character-sets-and-ranges.html">
-            
-            <span><b>7.5.</b> 字符集与范围</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.6" data-path="_src/numeric-quantifiers.html">
-            
-            <span><b>7.6.</b> 数字</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.7" data-path="_src/quantifiers-plus-star-question.html">
-            
-            <span><b>7.7.</b> +, *, ?</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.8" data-path="_src/greedy-and-lazy.html">
-            
-            <span><b>7.8.</b> 贪婪模式与懒惰模式</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.9" data-path="_src/ahchors-and-multiline-mode.html">
-            
-            <span><b>7.9.</b> 标记位和多行模式</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.10" data-path="_src/word-boundary.html">
-            
-            <span><b>7.10.</b> 单词边界</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.11" data-path="_src/infinite-backtracking-problem.html">
-            
-            <span><b>7.11.</b> 无限回溯问题</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.12" data-path="_src/groups.html">
-            
-            <span><b>7.12.</b> 分组</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.13" data-path="_src/alternation.html">
-            
-            <span><b>7.13.</b> 替换</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.14" data-path="_src/regular-expressions-methods.html">
-            
-            <span><b>7.14.</b> 常见表达式方法</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.15" data-path="_src/practice.html">
-            
-            <span><b>7.15.</b> 实践</span>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="8" >
-            
-            <span><b>8.</b> 其他</span>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="8.1" data-path="_src/onload-ondomcontentloaded.html">
-            
-            <span><b>8.1.</b> onLoad 与 onDOMContentLoaded</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="8.2" data-path="_src/animation.html">
-            
-            <span><b>8.2.</b> 动画</span>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="8.3" data-path="_src/memory-leaks.html">
-            
-            <span><b>8.3.</b> 内存泄露</span>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-
-            
-            <li class="divider"></li>
-            <li>
-                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                    Published with GitBook
-                </a>
-            </li>
-            
-        </ul>
-    </nav>
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
 </div>
 
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="README.md">
+            
+                <span>
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    JavaScript: 从入门到闭包
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    JavaScript 与其它相关技术
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    概述: JavaScript, Flash, Java, Silverlight and ActiveX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="pre-coding.md">
+            
+                <span>
+            
+                    
+                    磨刀不误砍柴工
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    起步
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="setup-your-environmentmd.html">
+            
+                <a href="setup-your-environmentmd.html">
+            
+                    
+                    环境设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="hello-world.html">
+            
+                <a href="hello-world.html">
+            
+                    
+                    Hello, World!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="variables-and-statements.html">
+            
+                <a href="variables-and-statements.html">
+            
+                    
+                    变量和声明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="development.md">
+            
+                <span>
+            
+                    
+                    浏览器开发工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="user-interaction-alert-prompt-and-confirm.html">
+            
+                <a href="user-interaction-alert-prompt-and-confirm.html">
+            
+                    
+                    用户交互: alert, prompt 和 confirm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" >
+            
+                <span>
+            
+                    
+                    操作符与语句
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.6.1" data-path="operators.html">
+            
+                <a href="operators.html">
+            
+                    
+                    操作符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6.2" data-path="comparison-operators-ifelse.md">
+            
+                <span>
+            
+                    
+                    比较操作符, if..else
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6.3" data-path="loops-and-switch.html">
+            
+                <a href="loops-and-switch.html">
+            
+                    
+                    循环和 switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="functions-declarations-and-expressions.html">
+            
+                <a href="functions-declarations-and-expressions.html">
+            
+                    
+                    函数: 声明和表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" >
+            
+                <span>
+            
+                    
+                    数据类型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="string.html">
+            
+                <a href="string.html">
+            
+                    
+                    String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="number-math.md">
+            
+                <span>
+            
+                    
+                    Number, Math
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="objects.md">
+            
+                <span>
+            
+                    
+                    Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="array.html">
+            
+                <a href="array.html">
+            
+                    
+                    Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="object-conversion.html">
+            
+                <a href="object-conversion.html">
+            
+                    
+                    类型转换, toString and valueOf
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="this.html">
+            
+                <a href="this.html">
+            
+                    
+                    "this"的四种用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="type-detection.html">
+            
+                <a href="type-detection.html">
+            
+                    
+                    类型判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="arguments.html">
+            
+                <a href="arguments.html">
+            
+                    
+                    函数参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="static-variables-methods-decorators.html">
+            
+                <a href="static-variables-methods-decorators.html">
+            
+                    
+                    静态变量和方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" >
+            
+                <span>
+            
+                    
+                    作用域与闭包
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.9.1" data-path="initialization.html">
+            
+                <a href="initialization.html">
+            
+                    
+                    函数和变量的初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9.2" data-path="closures.html">
+            
+                <a href="closures.html">
+            
+                    
+                    闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9.3" data-path="with-operator.html">
+            
+                <a href="with-operator.html">
+            
+                    
+                    "with" 操作符
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="decorators.html">
+            
+                <a href="decorators.html">
+            
+                    
+                    装饰模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    DOM 与 事件
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="adding-script-html.html">
+            
+                <a href="adding-script-html.html">
+            
+                    
+                    在HTML中加入script标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="browser-environment.html">
+            
+                <a href="browser-environment.html">
+            
+                    
+                    浏览器环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" >
+            
+                <span>
+            
+                    
+                    DOM
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="dom-nodes.html">
+            
+                <a href="dom-nodes.html">
+            
+                    
+                    DOM 节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="traversing-the-dom.md">
+            
+                <span>
+            
+                    
+                    DOM 遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="basic-dom-node-properties.html">
+            
+                <a href="basic-dom-node-properties.html">
+            
+                    
+                    基本节点属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.4" data-path="attributes-and-custom-properties.html">
+            
+                <a href="attributes-and-custom-properties.html">
+            
+                    
+                    节点 attributes 和 properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.5" data-path="modifying-document.md">
+            
+                <span>
+            
+                    
+                    修改文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.6" data-path="document-write.md">
+            
+                <span>
+            
+                    
+                    使用 document.write
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.7" data-path="searching-elements-dom.md">
+            
+                <span>
+            
+                    
+                    DOM 元素查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.8" data-path="more-references-forms-and-tables.html">
+            
+                <a href="more-references-forms-and-tables.html">
+            
+                    
+                    Form 和 Table 的遍历技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" >
+            
+                <span>
+            
+                    
+                    视图与位置
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="styles-and-classes-getcomputedstyle.html">
+            
+                <a href="styles-and-classes-getcomputedstyle.html">
+            
+                    
+                    样式与class, getComputedStyle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="re-introducing-css-positioning.html">
+            
+                <a href="re-introducing-css-positioning.html">
+            
+                    
+                    再谈 CSS position
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="metrics.md">
+            
+                <span>
+            
+                    
+                    数值计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.4" data-path="coordinates.md">
+            
+                <span>
+            
+                    
+                    坐标
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" >
+            
+                <span>
+            
+                    
+                    事件
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="introduction-browser-events.html">
+            
+                <a href="introduction-browser-events.html">
+            
+                    
+                    浏览器事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="obtaining-event-object.html">
+            
+                <a href="obtaining-event-object.html">
+            
+                    
+                    获取事件对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="bubbling-and-capturing.md">
+            
+                <span>
+            
+                    
+                    事件冒泡与捕获
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" data-path="default-browser-action.html">
+            
+                <a href="default-browser-action.html">
+            
+                    
+                    浏览器默认行为
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.5" data-path="event-delegation.html">
+            
+                <a href="event-delegation.html">
+            
+                    
+                    事件代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.6" data-path="mouse-events.md">
+            
+                <span>
+            
+                    
+                    鼠标事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.7" data-path="http:/javascript.info/tutorial/focus-blur">
+            
+                <span>
+            
+                    
+                    Focus/Blur: 方法与事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.8" data-path="keyboard-events">
+            
+                <span>
+            
+                    
+                    键盘事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    面向对象编程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="inheritance.md">
+            
+                <span>
+            
+                    
+                    原型继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="native-prototypes.md">
+            
+                <span>
+            
+                    
+                    扩展原生对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="constructor.md">
+            
+                <span>
+            
+                    
+                    "constructor" 属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="instanceof.md">
+            
+                <span>
+            
+                    
+                    "instanceof" 操作符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" >
+            
+                <span>
+            
+                    
+                    面向对象
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="oop-concepts.html">
+            
+                <a href="oop-concepts.html">
+            
+                    
+                    基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="pseudo-classical-pattern.html">
+            
+                <a href="pseudo-classical-pattern.html">
+            
+                    
+                    Pseudo-classical 模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.3" data-path="all-one-constructor-pattern.md">
+            
+                <span>
+            
+                    
+                    All-in-one constructor 模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.4" data-path="factory-constructor-pattern.md">
+            
+                <span>
+            
+                    
+                    Factory constructor 模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="binding.md">
+            
+                <span>
+            
+                    
+                    早绑定和晚绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="exceptions.md">
+            
+                <span>
+            
+                    
+                    异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    定时
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="datetime-functions.md">
+            
+                <span>
+            
+                    
+                    Date/Time 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="settimeout-setinterval.md">
+            
+                <span>
+            
+                    
+                    理解定时器: setTimeout 与 setInterval
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="events-and-timing-depth.md">
+            
+                <span>
+            
+                    
+                    深入理解事件和定时机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    框架和窗口
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="popup-windows.md">
+            
+                <span>
+            
+                    
+                    弹窗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="browser-window-properties-and-methods.md">
+            
+                <span>
+            
+                    
+                    查看window属性和方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="focus-blur.md">
+            
+                <span>
+            
+                    
+                    Focus/blur 方法和事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="frames-and-iframes.md">
+            
+                <span>
+            
+                    
+                    框架和iframe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="same-origin-security-policy.md">
+            
+                <span>
+            
+                    
+                    同源策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="cross-window-messaging-with-postmessage.md">
+            
+                <span>
+            
+                    
+                    postMessage跨窗口通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="clickjacking.md">
+            
+                <span>
+            
+                    
+                    Clickjacking 攻击与 X-Frame-Options
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    JavaScript 中的正则表达式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="regexp-introduction.html">
+            
+                <a href="regexp-introduction.html">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="character-classes.html">
+            
+                <a href="character-classes.html">
+            
+                    
+                    字符类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="special-characters.html">
+            
+                <a href="special-characters.html">
+            
+                    
+                    特殊字符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="flags.md">
+            
+                <span>
+            
+                    
+                    标记位
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="character-sets-and-ranges.html">
+            
+                <a href="character-sets-and-ranges.html">
+            
+                    
+                    字符集与范围
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="numeric-quantifiers.html">
+            
+                <a href="numeric-quantifiers.html">
+            
+                    
+                    数字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="quantifiers-plus-star-question.html">
+            
+                <a href="quantifiers-plus-star-question.html">
+            
+                    
+                    +, *, ?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="greedy-and-lazy.md">
+            
+                <span>
+            
+                    
+                    贪婪模式与懒惰模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="ahchors-and-multiline-mode.md">
+            
+                <span>
+            
+                    
+                    标记位和多行模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="word-boundary.md">
+            
+                <span>
+            
+                    
+                    单词边界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="infinite-backtracking-problem.md">
+            
+                <span>
+            
+                    
+                    无限回溯问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="groups.md">
+            
+                <span>
+            
+                    
+                    分组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="alternation.md">
+            
+                <span>
+            
+                    
+                    替换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="regular-expressions-methods.md">
+            
+                <span>
+            
+                    
+                    常见表达式方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.15" data-path="practice.md">
+            
+                <span>
+            
+                    
+                    实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    其他
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="onload-ondomcontentloaded.md">
+            
+                <span>
+            
+                    
+                    onLoad 与 onDOMContentLoaded
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="animation.md">
+            
+                <span>
+            
+                    
+                    动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="memory-leaks.md">
+            
+                <span>
+            
+                    
+                    内存泄露
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
     <div class="book-body">
-        <div class="body-inner">
-            <div class="book-header" role="navigation">
-    <!-- Actions Left -->
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
     
 
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >Javascipt 学习指南</a>
+        <a href=".." >函数和变量的初始化</a>
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1" role="main">
-                <div class="page-inner">
-                
-                
-                    <section class="normal" id="section-">
-                    
-                        <blockquote>
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
 <p>&#x8BD1;&#x8005;: &#x674E;&#x680B;</p>
 </blockquote>
 <h2 id="&#x51FD;&#x6570;&#x548C;&#x53D8;&#x91CF;&#x7684;&#x521D;&#x59CB;&#x5316;">&#x51FD;&#x6570;&#x548C;&#x53D8;&#x91CF;&#x7684;&#x521D;&#x59CB;&#x5316;</h2>
@@ -1221,50 +1742,78 @@ f()
 <code>var</code>&#x88AB;&#x5904;&#x7406;&#xFF0C;&#x5728;&#x9884;&#x6267;&#x884C;&#x9636;&#x6BB5;&#x88AB;&#x521B;&#x5EFA;&#x7C7B;&#x4F3C;&#x4E8E;<code>&#x8FD0;&#x884C;&#x73AF;&#x5883;</code>&#x5C5E;&#x6027;&#x3002;
 &#x6240;&#x4EE5;&#xFF0C;&#x8FD9;&#x884C;&#x4EE3;&#x7801;<code>value=`yes` </code>&#x4F1A;&#x6267;&#x884C;&#x4E8E;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;&#x6700;&#x540E;&#x8F93;&#x51FA;<code>yes</code></p>
 
-                    
-                    </section>
-                
-                
-                </div>
-            </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
         </div>
-
-        
-        <a href="../_src/arguments.html" class="navigation navigation-prev " aria-label="Previous page: 函数参数"><i class="fa fa-angle-left"></i></a>
-        
-        
-        <a href="../_src/closures.html" class="navigation navigation-next " aria-label="Next page: 闭包"><i class="fa fa-angle-right"></i></a>
-        
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
     </div>
 </div>
 
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="closures.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 闭包">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
         
-<script src="../gitbook/app.js"></script>
+    </div>
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
-<script>
-require(["gitbook"], function(gitbook) {
-    var config = {"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
-    gitbook.start(config);
-});
-</script>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"函数和变量的初始化","level":"1.3.9.1","depth":3,"next":{"title":"闭包","level":"1.3.9.2","depth":3,"path":"_src/closures.md","ref":"_src/closures.md","articles":[]},"previous":{"title":"作用域与闭包","level":"1.3.9","depth":2,"ref":"","articles":[{"title":"函数和变量的初始化","level":"1.3.9.1","depth":3,"path":"_src/initialization.md","ref":"_src/initialization.md","articles":[]},{"title":"闭包","level":"1.3.9.2","depth":3,"path":"_src/closures.md","ref":"_src/closures.md","articles":[]},{"title":"\"with\" 操作符","level":"1.3.9.3","depth":3,"path":"_src/with-operator.md","ref":"_src/with-operator.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"_src/initialization.md","mtime":"2017-06-14T04:28:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-14T07:14:37.489Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
 
         
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
     </body>
-    
 </html>
+

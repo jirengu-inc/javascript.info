@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>变量和声明 · GitBook</title>
+        <title>Pseudo-classical 模式 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="development.md" />
+    <link rel="next" href="all-one-constructor-pattern.md" />
     
     
-    <link rel="prev" href="hello-world.html" />
+    <link rel="prev" href="oop-concepts.html" />
     
 
     </head>
@@ -214,7 +214,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2.3" data-path="variables-and-statements.html">
+        <li class="chapter " data-level="1.3.2.3" data-path="variables-and-statements.html">
             
                 <a href="variables-and-statements.html">
             
@@ -996,7 +996,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5.2" data-path="pseudo-classical-pattern.html">
+        <li class="chapter active" data-level="1.5.5.2" data-path="pseudo-classical-pattern.html">
             
                 <a href="pseudo-classical-pattern.html">
             
@@ -1541,7 +1541,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >变量和声明</a>
+        <a href=".." >Pseudo-classical 模式</a>
     </h1>
 </div>
 
@@ -1557,217 +1557,269 @@
                                 <section class="normal markdown-section">
                                 
                                 <blockquote>
-<p>&#x8BD1;&#x8005;:&#x5468;&#x9E6D;&#x6C5F;</p>
+<p>&#x8BD1;&#x8005;: &#x738B;&#x6960;</p>
 </blockquote>
-<h2 id="&#x53D8;&#x91CF;&#x548C;&#x58F0;&#x660E;">&#x53D8;&#x91CF;&#x548C;&#x58F0;&#x660E;</h2>
-<p>JavaScript&#x786E;&#x5B9E;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x8BED;&#x8A00;&#x3002;&#x7279;&#x522B;&#x662F;&#x5BF9;&#x90A3;&#x4E9B;&#x4E4B;&#x524D;&#x7528;&#x8FC7;PHP&#x3001;C&#x3001;Java&#x7684;&#x4EBA;&#x6765;&#x8BF4;&#x3002;
-&#x54B1;&#x4EEC;&#x4EE5;&#x8BED;&#x8A00;&#x57FA;&#x7840;&#x5F00;&#x59CB;&#xFF1A;&#x53D8;&#x91CF;&#x3001;&#x7F16;&#x7801;&#x98CE;&#x683C;&#x7B49;&#x3002;</p>
-<h3 id="&#x4EE3;&#x7801;&#x7ED3;&#x6784;">&#x4EE3;&#x7801;&#x7ED3;&#x6784;</h3>
-<p>&#x4EE3;&#x7801;&#x7531;&#x591A;&#x6761;&#x8BED;&#x53E5;&#x6784;&#x6210;&#x3002;</p>
-<h4 id="&#x5206;&#x53F7;">&#x5206;&#x53F7;</h4>
-<p>&#x4F7F;&#x7528;&#x5206;&#x53F7;&#x9694;&#x5F00;&#x8BED;&#x53E5;&#x3002;</p>
-<pre><code>&lt;html&gt;
-    &lt;body&gt;
-      &lt;script&gt;
-        alert(&apos;Hello&apos;);
-        alert(&apos;World!&apos;);
-      &lt;/script&gt; 
-    &lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>&#x7A7A;&#x683C;&#x548C; tab &#x90FD;&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x5728;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#x4E2D;&#x5B9E;&#x73B0;&#xFF1A;
-<code>alert(&apos;Hello&apos;);   alert(&apos;World!&apos;);</code>
-&#x4F46;&#x662F;&#x6362;&#x884C;&#x7B26;&#x4E0D;&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x76F8;&#x53CD;&#xFF0C;<strong>&#x4E00;&#x4E2A;&#x6362;&#x884C;&#x7B26;&#x53EF;&#x80FD;&#x5206;&#x5F00;&#x8BED;&#x53E5;&#xFF0C;&#x5C31;&#x50CF;&#x5206;&#x53F7;&#x4E00;&#x6837;&#x3002;</strong></p>
-<p>&#x4E0B;&#x9762;&#x4E24;&#x884C;&#x4EE3;&#x7801;&#x6548;&#x679C;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF1A;</p>
-<pre><code>a = 5
-a = 5;
-</code></pre><h4 id="&#x7F3A;&#x5C11;&#x5206;&#x53F7;&#x9690;&#x60A3;">&#x7F3A;&#x5C11;&#x5206;&#x53F7;&#x9690;&#x60A3;</h4>
-<p>&#x4E5F;&#x6709;&#x56E0;&#x4E3A;&#x5206;&#x53F7;&#x95EE;&#x9898;&#x800C;&#x4EA7;&#x751F;&#x4E00;&#x4E9B;&#x9519;&#x8BEF;&#xFF0C;&#x5BFC;&#x81F4;&#x521D;&#x5B66;&#x8005;&#x4F7F;&#x7528;&#x591A;&#x884C;&#x4EFB;&#x52A1;&#x8C03;&#x7528;&#x3002;
-&#x9996;&#x5148;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E0D;&#x4F1A;&#x8D77;&#x4F5C;&#x7528;&#xFF1A;</p>
-<pre><code>var a = &quot;long
-  line &quot;
-</code></pre><p>&#x56E0;&#x4E3A;&#x89E3;&#x6790;&#x5668;&#x8BA4;&#x4E3A;&#x7B2C;&#x4E00;&#x884C;&#x662F;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x8BED;&#x53E5;&#xFF0C;&#x50CF;&#xFF1A;</p>
-<pre><code>var a = &quot;long;
-  line &quot;;
-</code></pre><p>&#x5C06;&#x4F1A;&#x6709;&#x672A;&#x5B8C;&#x6210;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x9519;&#x8BEF;&#xFF08;&#x672A;&#x7ED3;&#x675F;&#x7684;&#x5E38;&#x91CF;&#xFF09;&#x3002;</p>
-<p>&#x4E8C;&#xFF0C;&#x8FD9;&#x4E24;&#x6BB5;&#x4EE3;&#x7801;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF1A;</p>
-<pre><code>return
-  result;
-</code></pre><p>&#x56E0;&#x4E3A;&#x4E00;&#x4E2A;&#x6362;&#x884C;&#x7B26;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;</p>
-<pre><code>return;
-result;
-</code></pre><p>&#x90A3;&#x5F53;&#x7136;&#x548C;&#x4E0B;&#x9762;&#x7684;&#x4E0D;&#x540C;&#xFF1A;</p>
-<pre><code>return result
-</code></pre><p>&#x53EA;&#x6709;&#x6700;&#x540E;&#x7684;&#x4F8B;&#x5B50;&#x5B9E;&#x9645;&#x4E0A;&#x8F93;&#x51FA;<code>result</code>&#x3002;</p>
-<p>&#x8981;&#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x4FBF;&#x6377;&#x7684;&#x6362;&#x884C;&#x7B26;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x6362;&#x884C;&#x524D;&#x52A0;&#x4E0A;&#x53CD;&#x659C;&#x6760;&#xFF0C;&#x50CF;&#xFF1A;</p>
-<pre><code>var a = &quot;long \
-     line &quot;
-
-    return \
-       result
-</code></pre><p><strong>&#x5728;&#x6362;&#x884C;&#x524D;&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x53CD;&#x659C;&#x6760;&#xFF0C;&#x5F3A;&#x5236;&#x89E3;&#x91CA;&#x5668;&#x5FFD;&#x7565;&#x6362;&#x884C;&#x7B26;&#x3002;</strong></p>
-<p>&#x5982;&#x679C;&#x8868;&#x8FBE;&#x5F0F;&#x8FD8;&#x6CA1;&#x7ED3;&#x675F;&#x7684;&#x8BDD;&#xFF0C;&#x6362;&#x884C;&#x7B26;&#x4E5F;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x7279;&#x522B;&#x5BF9;&#x672A;&#x5B8C;&#x6210;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#x6216;&#x672A;&#x95ED;&#x5408;&#x62EC;&#x53F7;&#x3002;</p>
-<pre><code>var a = &quot;long &quot; +
-     &quot; line &quot;
-
-    var b = 2 + (
-     2 + 3
-    )
-</code></pre><p>JavaScript&#x8BD5;&#x7740;&#x66F4;&#x52A0;&#x667A;&#x80FD;&#x3002;&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#x8F93;&#x51FA;&#x7684;&#x662F;8&#xFF0C;&#x6362;&#x884C;&#x7B26;&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x522B;&#x95EE;&#x6211;&#x4E3A;&#x4EC0;&#x4E48;&#x3002;</p>
-<pre><code>var b = 2 * 2
-    + 4
-
-    alert(b)
-</code></pre><p>&#x5173;&#x4E8E;&#x5206;&#x53F7;&#x7684;&#x63D2;&#x5165;&#x662F;&#x590D;&#x6742;&#x7684;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x8FD8;&#x5F88;&#x5947;&#x602A;&#xFF0C;&#x5B83;&#x4EEC;&#x5728; ECMAScript&#x89C4;&#x8303;&#x4E2D;&#x63CF;&#x8FF0;&#x4E86;&#x3002;</p>
-<p><strong>&#x603B;&#x4E4B;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x5FFD;&#x7565;&#x7ED3;&#x5C3E;&#x7684;&#x5206;&#x53F7;&#xFF0C;&#x4F46;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x89E3;&#x91CA;&#x5668;&#x5C31;&#x6709;&#x66F4;&#x591A;&#x53D1;&#x6325;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x53EF;&#x80FD;&#x56E0;&#x4E3A;&#x6EE5;&#x7528;&#x5206;&#x53F7;&#x800C;&#x4EA7;&#x751F;bug&#x3002;</strong></p>
-<blockquote>
-<p>&#x5206;&#x53F7;&#xFF1A;&#x5199;&#x8FD8;&#x662F;&#x4E0D;&#x5199;&#xFF1F;
-&#x5728;&#x7A0B;&#x5E8F;&#x5458;&#x95F4;&#x603B;&#x662F;&#x4F1A;&#x6709;&#x8BA8;&#x8BBA;&#xFF1A;&#x201C;&#x6211;&#x5E94;&#x8BE5;&#x7528;&#x5206;&#x53F7;&#x5462;?&#x8FD8;&#x662F;&#x7701;&#x7565;&#xFF1F;&#x201D;&#x3002;&#x76EE;&#x524D;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x4EBA;&#x540C;&#x610F;&#x4ED6;&#x4EEC;&#x5E94;&#x8BE5;&#x5199;&#x5206;&#x53F7;&#x3002;
-&#x5728;&#x8BE5;&#x6559;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x5F88;&#x591A;&#x4EE3;&#x7801;&#x6CA1;&#x6709;&#x4EE5;&#x5206;&#x53F7;&#x7ED3;&#x5C3E;&#xFF0C;&#x90A3;&#x53EA;&#x662F;&#x6211;&#x7684;&#x574F;&#x4E60;&#x60EF;&#x3002;
-&#x56E0;&#x4E3A;&#x6211;&#x624D;&#x5F00;&#x59CB;&#x7528;JavaScript&#x6CA1;&#x591A;&#x4E45;&#xFF0C;&#x6211;&#x7ECF;&#x5E38;&#x4EA7;&#x751F;&#x4E0D;&#x7528;&#x5206;&#x53F7;&#x7684;&#x9690;&#x60A3;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x77E5;&#x9053;&#x5E94;&#x8BE5;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x3002;&#x6211;&#x731C;&#x4F60;&#x4E5F;&#x4E0D;&#x60F3;&#x91CD;&#x590D;&#x6211;&#x7684;&#x8DEF;&#xFF0C;&#x800C;&#x662F;&#x8DF3;&#x5F00;&#x8FD9;&#x4E2A;&#x5751;&#xFF0C;&#x6240;&#x4EE5;&#x8BB0;&#x5F97;&#x628A;&#x5206;&#x53F7;&#x653E;&#x5728;&#x8BED;&#x53E5;&#x4E4B;&#x95F4;&#x3002;</p>
-<p>&#x54EA;&#x91CC;&#x51FA;&#x9519;&#x4E86;&#xFF1F;</p>
-</blockquote>
-<pre><code>var a = &quot;Empty spaces - what are we living for?
-    Abandoned places - I guess we know the score..
-    On and on!
-    Does anybody know what we are looking for?&quot;
-
-    alert(a)
-</code></pre><h4 id="&#x89E3;&#x51B3;&#x65B9;&#x6848;">&#x89E3;&#x51B3;&#x65B9;&#x6848;</h4>
-<p>&#x591A;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x5728;&#x6362;&#x884C;&#x524D;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x53CD;&#x659C;&#x6760;&#xFF1A;</p>
-<pre><code>var a = &quot;Empty spaces - what are we living for? \
-    Abandoned places - I guess we know the score.. \
-    On and on! \
-    Does anybody know what we are looking for?&quot;
-
-    alert(a)
-</code></pre><h3 id="&#x53D8;&#x91CF;">&#x53D8;&#x91CF;</h3>
-<p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x719F;&#x6089;&#x5E38;&#x89C4;&#x7F16;&#x7A0B;&#x53D8;&#x91CF;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x8FD9;&#x6709;&#x4E2A;&#x5F88;&#x68D2;&#x7684;<a href="https://en.wikipedia.org/wiki/Variable_(computer_science" target="_blank">wiki&#x6587;&#x7AE0;</a>) <code>[&#x5907;&#x6CE8;4]</code> </p>
-<p>&#x957F;&#x8BDD;&#x77ED;&#x8BF4;&#xFF0C;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x547D;&#x540D;&#x7684;&#x201C;&#x76D2;&#x5B50;&#x201D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x503C;&#x653E;&#x8FDB;&#x76D2;&#x5B50;&#x91CC;&#x3002;</p>
-<h4 id="&#x5B9A;&#x4E49;">&#x5B9A;&#x4E49;</h4>
-<p>&#x9996;&#x5148;&#xFF0C;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x5E94;&#x8BE5;&#x88AB;&#x5B9A;&#x4E49;&#xFF0C;&#x90A3;&#x53EF;&#x4EE5;&#x5728;&#x4EE3;&#x7801;&#x7684;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x76F4;&#x63A5;&#x4F7F;&#x7528; <code>var</code>&#x3002;</p>
-<pre><code>var x
-</code></pre><p>&#x5F53;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x88AB;&#x5B9A;&#x4E49;&#x540E;&#xFF0C;&#x624D;&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;&#x5B83;&#xFF0C;&#x6BD4;&#x5982;&#xFF0C;&#x5C06;&#x4E00;&#x4E2A;&#x503C;&#x8D4B;&#x7ED9;&#x5B83;&#xFF1A;</p>
-<pre><code>var x
-x = 5
-</code></pre><p>&#x6216;&#x8005;&#x4F60;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x4E2A;<code>var</code>&#x8BED;&#x53E5;&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x53D8;&#x91CF;&#xFF1A;</p>
-<pre><code>var a, b, c
-</code></pre><p>&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x5B9A;&#x4E49;&#x4E2D;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF1A;</p>
-<pre><code>var name = &quot;John&quot;, song = &quot;La-la-la&quot;
-</code></pre><blockquote>
-<p>&#x5728;JavaScript&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x8FD8;&#x6CA1;&#x6709;&#x7528; <code>var</code>&#x5B9A;&#x4E49;&#x8FC7;&#x7684;&#x53D8;&#x91CF;&#xFF1A;
-<code>noVar = &quot;value&quot;</code>
-&#x4ECE;&#x6280;&#x672F;&#x4E0A;&#x8BB2;&#xFF0C;&#x5B83;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x4F46;&#x4E0D;&#x8981;&#x8FD9;&#x6837;&#x505A;&#x3002;&#x59CB;&#x7EC8;&#x4F7F;&#x7528; <code>var</code>&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5E76;&#x4E14;&#x80FD;&#x5E2E;&#x5FD9;&#x89C4;&#x907F;&#x67D0;&#x4E9B;&#x9519;&#x8BEF;&#xFF0C;&#x50CF;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;
-&#x8BF7;&#x5728;IE&#x4E2D;&#x8FD0;&#x884C;&#xFF1A;
-```</p>
-<p><html>
-    <body>
-    <div id="test"></div></body></html></p>
-</blockquote>
-<pre><code>&lt;script&gt;
- test = 5
-alert(test)
-&lt;/script&gt;
-
-&lt;/body&gt;
-</code></pre><p>&lt;/html&gt;</p>
-<pre><code>&gt; &#x4F1A;&#x51FA;&#x9519;&#x3002;
-IE&#x6D4F;&#x89C8;&#x5668;&#x3001;Safari&#x3001;Chrome&#x548C;Opera&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x4E3A;&#x6BCF;&#x4E2A;id&#x5143;&#x7D20;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x6240;&#x4EE5;&#x53D8;&#x91CF;&#x6D4B;&#x8BD5;&#x5F15;&#x7528;&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x4E2D;&#x7684;DIV&#x3002;
-&#x4F46;&#x662F;&#x5728;IE&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#xFF0C;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x53D8;&#x91CF;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x80FD;&#x6539;&#x53D8;&#x7684;&#x5185;&#x90E8;&#x53C2;&#x8003;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x8D4B;&#x503C;&#x7ED9;&#x6D4B;&#x8BD5;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#x7684;&#x539F;&#x56E0;&#x3002;
-&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x6709;&#x6548;&#xFF1A;
-</code></pre><p><html>
-    <body>
-    <div id="test"></div></body></html></p>
-<pre><code>&lt;script&gt;
- var test = 5
-alert(test)
-&lt;/script&gt;
-
-&lt;/body&gt;
-</code></pre><p>&lt;/html&gt;</p>
-<pre><code>#### &#x53D8;&#x91CF;&#x540D;
-
-**&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x540D;&#x9996;&#x5B57;&#x7B26;&#x5E94;&#x8BE5;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x6BCD;&#x3001;`$` &#x6216; `_`&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x6216;&#x8005;&#x540E;&#x9762;&#x7684;&#x5B57;&#x7B26;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6570;&#x5B57;&#x3002;**
-&#x5947;&#x602A;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x6548;&#x547D;&#x540D;:
-</code></pre><p>var $this,
-    <em>private,
-     $,
-     </em>,
-    $1,
-    user15</p>
-<pre><code>&gt; JavaScript &#x662F;&#x5927;&#x5C0F;&#x5199;&#x654F;&#x611F;&#xFF01;
-**Apple&#x548C;APPLE&#x662F;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x540D;&#x5B57;&#x3002;**
-
-#### &#x4FDD;&#x7559;&#x5B57;
-
-&#x53E6;&#x5916;&#x8FD8;&#x6709;&#x4E9B;&#x4E0D;&#x80FD;&#x7528;&#x4F5C;&#x53D8;&#x91CF;&#x540D;&#x7684;&#x4FDD;&#x7559;&#x5B57;&#x3002;&#x5305;&#x62EC; `var`&#x3001;`function`&#x3001;`return`&#x3001;`class`&#x3001;`implements`&#x548C;&#x5176;&#x4ED6;&#x5B57;&#xFF0C;&#x5979;&#x4EEC;&#x5927;&#x90E8;&#x5206;&#x88AB;&#x7528;&#x4E8E;&#x8BED;&#x8A00;&#x672C;&#x8EAB;&#x3002;
-&#x6709;&#x4E9B;&#x5B57;&#xFF0C;&#x50CF;`class`&#xFF0C;&#x5E76;&#x4E0D;&#x7528;&#x4E8E;&#x73B0;&#x4EE3;JavaScript&#x4E2D;&#xFF0C;&#x4F46;&#x4ECD;&#x7136;&#x88AB;&#x4FDD;&#x7559;&#x3002;&#x6709;&#x4E9B;&#x6D4F;&#x89C8;&#x5668;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#xFF0C;&#x4F46;&#x662F;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x53EF;&#x80FD;&#x4F1A;&#x4EA7;&#x751F;&#x9690;&#x60A3;&#x3002;
-&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x80FD;&#x5728;&#x706B;&#x72D0;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x5141;&#x8BB8; `&#x2019;class&#x2019;`&#x4F5C;&#x4E3A;&#x53D8;&#x91CF;&#x540D;&#x8FD0;&#x884C;&#xFF0C;&#x4F46;&#x5B83;&#x4F1A;&#x5728;Safari&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x540D;&#x800C;&#x7ED9;&#x51FA;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#xFF1A;
-</code></pre><p>var class = 5
-    alert(class)</p>
-<pre><code>&#x9605;&#x8BFB;&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x547D;&#x540D;&#x51C6;&#x5219;&#xFF0C;&#x8FD8;&#x6709;&#x5982;&#x4F55;&#x7ED9;&#x53D8;&#x91CF;&#x53D6;&#x4E2A;&#x597D;&#x540D;&#x5B57;[&#x53D8;&#x91CF;&#x547D;&#x540D;]( http://javascript.info/draft/variable-naming)&#x6587;&#x7AE0;&#x3002;
-
-#### &#x8BED;&#x8A00;&#x7C7B;&#x578B;
-
-JavaScript&#x5B9A;&#x4E49;&#x4E86;&#x4E0B;&#x9762;&#x7684;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#xFF1A;
-**&#x6570;&#x5B57;**
-&#x4EFB;&#x4F55;&#x6570;&#x5B57;&#xFF0C;&#x6574;&#x6570;&#x4E0E;&#x975E;&#x6574;&#x6570;&#xFF1A;1&#x3001;2&#x3001;1.5&#x7B49;&#x7B49;
-**&#x5B57;&#x7B26;&#x4E32;**
-&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x50CF; `&#x2019;cat&#x2019;`&#x3001;`&#x2019;dog&#x2019;`&#x6216;&#x8005; `&#x2019;my mommie bought a puppy&#x2019;`
-**&#x5E03;&#x5C14;**
-&#x4E24;&#x4E2A;&#x53EF;&#x80FD;&#x503C;&#xFF1A;true&#x548C;false
-**&#x5BF9;&#x8C61;**
-&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x4EE5;&#x540E;&#x8BA8;&#x8BBA;&#x5B83;&#x4EEC;&#x3002;
-**&#x7279;&#x6B8A;&#x503C;**
-&#x6CA1;&#x6709;&#x7C7B;&#x578B;&#x7684;&#x7279;&#x6B8A;&#x503C;&#xFF1A;null&#x548C;undefined
-
-#### &#x5F31;&#x7C7B;&#x578B;
-&#x6240;&#x6709;&#x7684;&#x53D8;&#x91CF;&#x5728;JavaScript&#x4E2D;&#x90FD;&#x662F;*&#x5F31;&#x7C7B;&#x578B;*&#xFF0C;&#x610F;&#x5473;&#x7740;&#x4E24;&#x6837;&#x4E8B;&#xFF1A;
-1. &#x6BCF;&#x4E00;&#x4E2A;&#x503C;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;
-2. &#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x53D8;&#x91CF;&#x4E2D;&#x52A0;&#x5165;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x3002;
-&#x6BD4;&#x5982;&#xFF1A;
-</code></pre><p>var userId = 123;   // 123 is a number
-var name = &quot;John&quot;;  // &quot;John&quot; is a string</p>
-<pre><code>&#x4F46;&#x4F60;&#x53EF;&#x4EE5;&#x4EFB;&#x610F;&#x7ED9;&#x53D8;&#x91CF;&#x8D4B;&#x5230;&#x53E6;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF1A;
-</code></pre><p>var userId = 123;   // 123 is a number
-userId = false;     // now userId is boolean</p>
-<pre><code>**&#x5728;&#x53D8;&#x91CF;&#x8D4B;&#x503C;&#x524D;&#xFF0C;&#x5B83;&#x6709; `undefined` &#x503C;&#x3002;** &#x4E0B;&#x9762;&#x7684;&#x8BED;&#x53E5;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF1A;
-</code></pre><p>var x
-var x = undefined</p>
-<pre><code>&#x5927;&#x4F53;&#x4E0A;&#xFF0C;`undefined` &#x610F;&#x5473;&#x7740;&#x201C;&#x6CA1;&#x6709;&#x503C;&#x201D;&#x3002;
-
-### &#x6CE8;&#x91CA;
-&#x4F60;&#x662F;&#x5426;&#x8FD8;&#x8BB0;&#x5F97;&#x524D;&#x9762;&#x4F8B;&#x5B50;&#x4E2D;&#x7684;&#x201D;//&#x201D;&#xFF1F; &#x5B83;&#x4EEC;&#x662F;&#x7528;&#x6765;&#x6CE8;&#x91CA;&#x7684;&#x3002;
-&#x6CE8;&#x91CA;&#x5728;JavaScript&#x4E2D;&#x6709;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x5F62;&#x5F0F;&#x3002;&#x5355;&#x884C;&#x8BC4;&#x8BBA;&#x4EE5;`//` &#x5F00;&#x59CB;&#xFF0C;&#x6301;&#x7EED;&#x5230;&#x884C;&#x7684;&#x672B;&#x5C3E;&#x3002;
-</code></pre><p>// let&apos;s see who is here:
-var name = &quot;John&quot;; // My most valued visitor</p>
-<pre><code>&#x5728;`//`&#x540E;&#x8F93;&#x5165;&#x7684;&#x4EFB;&#x4F55;&#x4E1C;&#x897F;&#x90FD;&#x4F1A;&#x88AB;&#x89E3;&#x91CA;&#x5668;&#x5FFD;&#x7565;&#x3002;
-
-#### &#x591A;&#x884C;&#x6CE8;&#x91CA;
-&#x591A;&#x884C;&#x6CE8;&#x91CA;&#x9644;&#x5728;`/*&#x2026;*/`&#x4E2D;&#xFF0C;&#x5E76;&#x53EF;&#x8DE8;&#x591A;&#x884C;&#x3002;
-</code></pre><p>/*
-The following variable has a short name.</p>
-<p>Usually a short name means that the variable is
-temporary and used only in nearest code.
-*/
-var a = &quot;John&quot;;</p>
-<pre><code>#### &#x533A;&#x5757;
-&#x4E0B;&#x4E00;&#x4E2A;&#x6784;&#x5EFA;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A; *block*&#xFF0C;&#x5B83;&#x662F;&#x7531;&#x5305;&#x88F9;&#x5728;&#x82B1;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x591A;&#x79CD;&#x8BED;&#x53E5;&#x7EC4;&#x6210;&#xFF0C;&#x50CF;&#x4E0B;&#x9762;&#xFF1A;
-</code></pre><p>var i = 5;
-{
-  i = 6;
+<p><a href="http://javascript.info/tutorial/pseudo-classical-pattern#pseudo-class-declaration" target="_blank">&#x4F2A;&#x7C7B;&#x58F0;&#x660E;</a></p>
+<p><a href="http://javascript.info/tutorial/pseudo-classical-pattern#inheritance" target="_blank">&#x7EE7;&#x627F;</a></p>
+<p><a href="http://javascript.info/tutorial/pseudo-classical-pattern#calling-superclass-constructor" target="_blank">&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;</a></p>
+<p><a href="http://javascript.info/tutorial/pseudo-classical-pattern#overriding-a-method-polymorphism" target="_blank">&#x91CD;&#x5199;&#x65B9;&#x6CD5;(&#x591A;&#x6001;&#x6027;)</a>
+&#x3000;&#x3000;1.<a href="http://javascript.info/tutorial/pseudo-classical-pattern#calling-a-parent-method-after-overriding" target="_blank">&#x91CD;&#x5199;&#x540E;&#x8C03;&#x7528;&#x7236;&#x65B9;&#x6CD5;</a>
+&#x3000;&#x3000;2.<a href="http://javascript.info/tutorial/pseudo-classical-pattern#sugar-removing-direct-reference-to-parent" target="_blank">Sugar: &#x6D88;&#x9664;&#x7236;&#x7C7B;&#x7684;&#x76F4;&#x63A5;&#x5F15;&#x7528;</a></p>
+<p><a href="http://javascript.info/tutorial/pseudo-classical-pattern#private-protected-methods-encapsulation" target="_blank">&#x79C1;&#x6709;/&#x4FDD;&#x62A4;&#x65B9;&#x6CD5; (&#x5C01;&#x88C5;)</a></p>
+<p><a href="http://javascript.info/tutorial/pseudo-classical-pattern#static-methods-and-properties" target="_blank">&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;</a></p>
+<p><a href="http://javascript.info/tutorial/pseudo-classical-pattern#summary" target="_blank">&#x603B;&#x7ED3;</a></p>
+<p>&#x5728;&#x975E;&#x5178;&#x578B;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x5BF9;&#x8C61;&#x88AB;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6240;&#x521B;&#x5EFA;&#x5E76;&#x4E14;&#x5B83;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4E00;&#x4E2A;&#x539F;&#x578B;&#x3002;</p>
+<p>&#x5728;&#x6846;&#x67B6;&#x4E2D;&#x4F7F;&#x7528;&#x975E;&#x5178;&#x578B;&#x6A21;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x8C37;&#x6B4C;<em>Closure</em>&#x56FE;&#x4E66;&#x9986;&#xFF0C;&#x539F;&#x751F;JavaScript&#x5BF9;&#x8C61;&#x4E5F;&#x9075;&#x5FAA;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x3002;</p>
+<p><strong>&#x4F2A;&#x7C7B;&#x58F0;&#x660E;</strong></p>
+<p>&#x9009;&#x62E9;&#x4F2A;&#x7C7B;&#x8FD9;&#x4E2A;&#x8BCD;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x5728;JavaScript&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x771F;&#x6B63;&#x7684;&#x7C7B;&#xFF0C;&#x53EA;&#x662F;&#x7C7B;&#x4F3C;&#x4E8E;C&#xFF0C;Java&#xFF0C;PHP&#x4E2D;&#x7684;&#x7C7B;&#xFF0C;&#x5E76;&#x4E14;&#x548C;&#x5B83;&#x4EEC;&#x7684;&#x6A21;&#x5F0F;&#x6BD4;&#x8F83;&#x63A5;&#x8FD1;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;&#x672C;&#x6587;&#x5047;&#x5B9A;&#x4F60;&#x662F;&#x719F;&#x6089;&#x539F;&#x751F;&#x7684;&#x7EE7;&#x627F;&#x662F;&#x600E;&#x4E48;&#x6837;&#x5DE5;&#x4F5C;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x5185;&#x5BB9;&#x5728;<a href="http://javascript.info/tutorial/inheritance" target="_blank"> Prototypal inheritance</a>&#x4E2D;&#x6709;&#x6D89;&#x53CA;&#x3002;
+&#x4E00;&#x4E2A;&#x4F2A;&#x7C7B;&#x7531;&#x6784;&#x9020;&#x51FD;&#x6570;&#x548C;&#x65B9;&#x6CD5;&#x7EC4;&#x6210;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x5355;&#x72EC;&#x7684;<em>sit</em>&#x65B9;&#x6CD5;&#x548C;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#x7684;Animal&#x4F2A;&#x7C7B;</p>
+<pre><code>function Animal(name) {
+  this.name = name
 }
-var b;
-```
-&#x72EC;&#x7ACB;&#x5757;&#x4ECE;&#x672A;&#x5728;JavaScript&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x82B1;&#x62EC;&#x53F7;&#x5185;&#x7684;&#x8BED;&#x53E5;&#x4F5C;&#x4E3A;&#x66F4;&#x590D;&#x6742;&#x8BED;&#x6CD5;&#x6784;&#x5EFA;&#x4E2D;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x50CF;for&#x3001;if&#x3001;while&#x3001;functions&#x7B49;&#x7B49;&#x3002;</p>
-<p>&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x5B66;&#x4E60;&#x3002;</p>
-<h3 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h3>
-<p>&#x4E00;&#x4E9B;&#x8981;&#x70B9;&#x6982;&#x51B5;&#xFF1A;</p>
+Animal.prototype = {
+  canWalk: true,
+  sit: function() {
+    this.canWalk = false
+    alert(this.name + &apos; sits down.&apos;)
+  }
+}
+
+var animal = new Animal(&apos;Pet&apos;) // (1)
+alert(animal.canWalk) // true
+animal.sit()             // (2)
+alert(animal.canWalk) // false
+</code></pre><p>1.&#x5F53;<em>new Animal</em> &#x88AB;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x65B0;&#x5BF9;&#x8C61;&#x63A5;&#x6536;&#x4E86;&#x5230;Animal.prototype&#x7684;<em>proto</em>&#x7684;&#x5F15;&#x7528;&#x3002;&#x53EF;&#x4EE5;&#x89C2;&#x5BDF;&#x5DE6;&#x8FB9;&#x90A3;&#x5F20;&#x56FE;&#x7684;&#x4E00;&#x90E8;&#x5206;.
+2.&#x5728;&#x5B9E;&#x4F8B;&#x4E2D;&#xFF0C;<em>animal.sit</em> &#x65B9;&#x6CD5;&#x6539;&#x53D8;&#x4E86;<em>animal.canWalk</em> ,&#x6240;&#x4EE5;&#x73B0;&#x5728;&#x8FD9;&#x4E2A;<em>animal</em> &#x5BF9;&#x8C61;&#x4E0D;&#x80FD;walk&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x4ED6;&#x7684;<em>animals</em> &#x53EF;&#x4EE5;&#x3002;
+<img src="http://javascript.info/files/tutorial/advanced/oop/animal_constructor.png" alt=""></p>
+<p><strong>&#x4F2A;&#x7C7B;&#x7684;&#x7ED3;&#x6784;</strong></p>
 <ul>
-<li>&#x53D8;&#x91CF;&#x662F;&#x88AB; <code>var</code>&#x5B9A;&#x4E49;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x4F4D;&#x7F6E;&#xFF0C;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x5B9A;&#x4E49;&#x4E2D;&#x88AB;&#x8D4B;&#x503C;&#x3002;</li>
-<li>&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x4E00;&#x4E2A;&#x503C;&#x3002;</li>
-<li>&#x5355;&#x884C;&#x6CE8;&#x91CA; <code>//</code>&#x548C; &#x591A;&#x884C;&#x6CE8;&#x91CA; <code>/&#x2026;*/</code></li>
-<li>&#x8BED;&#x53E5;&#x662F;&#x88AB;&#x5206;&#x53F7;&#x5206;&#x9694;&#x7684;&#x3002;&#x4E00;&#x4E2A;&#x6362;&#x884C;&#x7B26;&#x901A;&#x5E38;&#x610F;&#x5473;&#x7740;&#x4E00;&#x4E2A;&#x5206;&#x53F7;&#xFF0C;&#x6240;&#x4EE5;&#x6280;&#x672F;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x65F6;&#x95F4;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#x5206;&#x53F7;&#x3002;&#x5BF9;&#x4E8E;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x5206;&#x53F7;&#x8FD8;&#x662F;&#x7701;&#x7565;&#x5B58;&#x5728;&#x4E89;&#x8BAE;&#xFF0C;&#x8BF7;&#x7741;&#x5F00;&#x773C;&#x775B;&#xFF0C;&#x9009;&#x62E9;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x65B9;&#x5F0F;&#x3002;</li>
+<li><p>&#x65B9;&#x6CD5;&#x548C;&#x9ED8;&#x8BA4;&#x5C5E;&#x6027;&#x5728;&#x539F;&#x578B;&#x4E2D;&#x3002;</p>
+</li>
+<li><p>&#x539F;&#x578B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x4F7F;&#x7528;this&#xFF0C;this&#x662F;&#x6307;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x4E3A;this&#x7684;&#x503C;&#x53EA;&#x53D6;&#x51B3;&#x4E8E;&#x4E0A;&#x4E0B;&#x6587;&#x91CC;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x6240;&#x4EE5;<em>animal.sit()</em> &#x5C06;this&#x6307;&#x5411;animal&#x3002;</p>
+</li>
 </ul>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x4F53;&#x7CFB;&#x4E2D;&#x6709;&#x4E00;&#x4E9B;&#x98CE;&#x9669;&#xFF0C;&#x770B;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x3002;</p>
+<p>&#x4F60;&#x662F;&#x4E00;&#x4E2A;&#x4ED3;&#x9F20;&#x519C;&#x573A;&#x7684;&#x56E2;&#x961F;&#x9886;&#x5BFC;&#x3002;&#x4E00;&#x4F4D;&#x7A0B;&#x5E8F;&#x5458;&#x6709;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x521B;&#x5EFA;&#x4ED3;&#x9F20;&#x6784;&#x9020;&#x51FD;&#x6570;&#x548C;&#x539F;&#x578B;&#x3002;</p>
+<p>&#x4ED3;&#x9F20;&#x4EEC;&#x90FD;&#x5E94;&#x8BE5;&#x6709;&#x4E00;&#x4E2A;&#x98DF;&#x7269;&#x50A8;&#x5B58;&#xFF08;food storage&#xFF09;&#x548C;&#x53D1;&#x73B0;&#x98DF;&#x7269;&#xFF08;found&#xFF09;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x4ED6;&#x7ED9;&#x4F60;&#x5E26;&#x6765;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF08;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF09;&#x3002;&#x4EE3;&#x7801;&#x770B;&#x8D77;&#x6765;&#x4E0D;&#x9519;&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x4F60;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x4ED3;&#x9F20;&#xFF0C;&#x7136;&#x540E;&#x5582;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#xFF0C;&#x4E0D;&#x77E5;&#x600E;&#x7684;&#xFF0C;&#x4E24;&#x4E2A;&#x4ED3;&#x9F20;&#x90FD;&#x9971;&#x4E86;&#x3002;</p>
+<p>&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;&#x5982;&#x4F55;&#x4FEE;&#x590D;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF1F;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Hamster</span>(<span class="hljs-params"></span>) </span>{  }
+Hamster.prototype = {
+  food: [],
+  found: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">something</span>) </span>{
+    <span class="hljs-keyword">this</span>.food.push(something)
+  }
+}
+
+<span class="hljs-comment">// Create two speedy and lazy hamsters, then feed the first one</span>
+speedy = <span class="hljs-keyword">new</span> Hamster()
+lazy = <span class="hljs-keyword">new</span> Hamster()
+
+speedy.found(<span class="hljs-string">&quot;apple&quot;</span>)
+speedy.found(<span class="hljs-string">&quot;orange&quot;</span>)
+
+alert(speedy.food.length) <span class="hljs-comment">// 2</span>
+alert(lazy.food.length) <span class="hljs-comment">// 2 (!??)</span>
+</code></pre>
+<p><strong>&#x7EE7;&#x627F;</strong></p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7C7B;&#x5E76;&#x4E14;&#x4ECE;<em>Animal</em> &#x7EE7;&#x627F;&#x5B83;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A; <em>A Rabbit</em> !</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Rabbit</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-keyword">this</span>.name = name
+}
+
+Rabbit.prototype.jump = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">this</span>.canWalk = <span class="hljs-literal">true</span>
+  alert(<span class="hljs-keyword">this</span>.name + <span class="hljs-string">&apos; jumps!&apos;</span>)
+}
+
+<span class="hljs-keyword">var</span> rabbit = <span class="hljs-keyword">new</span> Rabbit(<span class="hljs-string">&apos;John&apos;</span>)
+</code></pre>
+<p>&#x6B63;&#x5982;&#x4F60;&#x8BF4;&#x770B;&#x5230;&#x7684;&#xFF0C;&#x548C;<em>Animal</em> &#x7C7B;&#x6709;&#x76F8;&#x540C;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x539F;&#x578B;&#x4E2D;&#x4E5F;&#x6709;&#x76F8;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x4ECE;<em>Animal</em> &#x7C7B;&#x7EE7;&#x627F;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;<em>Rabbit.prototype.<strong>proto</strong> == Animal.prototype</em> &#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x81EA;&#x7136;&#x5730;&#x5FC5;&#x8981;&#x6761;&#x4EF6;&#xFF0C;&#x56E0;&#x4E3A;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x4E0D;&#x80FD;&#x5728;<em>Rabbit.prototype</em>  &#x4E2D;&#x627E;&#x5230;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5E94;&#x8BE5;&#x5728;&#x7236;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#x88AB;&#x627E;&#x5230;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x770B;&#x5B83;&#x4EEC;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF1A;
+<img src="http://javascript.info/files/tutorial/advanced/oop/animal_inherit.png" alt=""></p>
+<p>&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x539F;&#x578B;&#x94FE;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x521D;&#x59CB;rabbit.prototype&#x4E3A;&#x7A7A;&#x7684;&#x5BF9;&#x8C61;&#x7EE7;&#x627F;animal.prototype&#xFF0C;&#x7136;&#x540E;&#x6DFB;&#x52A0;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Rabbit</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-keyword">this</span>.name = name
+}
+
+Rabbit.prototype = inherit(Animal.prototype)
+
+Rabbit.prototype.jump = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ ... }
+</code></pre>
+<p><strong>&#x7EE7;&#x627F;</strong></p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x7EE7;&#x627F;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7ED9;&#x5B9A;<strong>proto</strong>&#x7684;&#x7A7A;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inherit</span>(<span class="hljs-params">proto</span>)</span>{
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span>(<span class="hljs-params"></span>)</span>{}
+  F.prototype=proto
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> F 
+}
+</code></pre>
+<p>&#x66F4;&#x591A;&#x7EC6;&#x8282;&#x8BF7;&#x770B; <a href="http://javascript.info/tutorial/inheritance#inherit" target="_blank">Prototypalinheritance</a>&#x3002;</p>
+<p>&#x6700;&#x540E;&#xFF0C;&#x8FD9;&#x662F;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5168;&#x90E8;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Animal </span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Animal</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-keyword">this</span>.name = name
+}
+
+<span class="hljs-comment">// Animal methods</span>
+Animal.prototype = { 
+  canWalk: <span class="hljs-literal">true</span>,
+  sit: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">this</span>.canWalk = <span class="hljs-literal">false</span>
+    alert(<span class="hljs-keyword">this</span>.name + <span class="hljs-string">&apos; sits down.&apos;</span>)
+  }
+}
+
+<span class="hljs-comment">// Rabbit</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Rabbit</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-keyword">this</span>.name = name
+}
+
+<span class="hljs-comment">// inherit</span>
+Rabbit.prototype = inherit(Animal.prototype)
+
+<span class="hljs-comment">// Rabbit methods</span>
+Rabbit.prototype.jump = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">this</span>.canWalk = <span class="hljs-literal">true</span>
+  alert(<span class="hljs-keyword">this</span>.name + <span class="hljs-string">&apos; jumps!&apos;</span>)
+}
+
+<span class="hljs-comment">// Usage</span>
+<span class="hljs-keyword">var</span> rabbit = <span class="hljs-keyword">new</span> Rabbit(<span class="hljs-string">&apos;Sniffer&apos;</span>)
+
+rabbit.sit()   <span class="hljs-comment">// Sniffer sits.</span>
+rabbit.jump()  <span class="hljs-comment">// Sniffer jumps!</span>
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x4E0D;&#x8981;&#x521B;&#x5EFA;&#x65B0;&#x7684;<em>Animal</em> &#x53BB;&#x7EE7;&#x627F;&#x3002;</p>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x8457;&#x540D;&#x7684;&#x4F46;&#x9519;&#x8BEF;&#x7684;&#x7EE7;&#x627F;&#x65B9;&#x5F0F;&#x3002;&#x4EBA;&#x4EEC;&#x6CA1;&#x6709;&#x4F7F;&#x7528;<em>Rabbit.prototype = inherit(Animal.prototype) </em> &#x800C;&#x662F;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// inherit from Animal</span>
+Rabbit.prototype = <span class="hljs-keyword">new</span> Animal()
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;<em>Animal</em> &#x5BF9;&#x8C61;&#x539F;&#x578B;&#x3002;&#x7EE7;&#x627F;&#x5728;&#x8FD9;&#x751F;&#x6548;&#xFF0C;&#x56E0;&#x4E3A;&#x65B0;&#x7684;<em>Animal</em> &#x81EA;&#x7136;&#x5730;&#x7EE7;&#x627F;&#x4E86;<em>Animal.prototype</em></p>
+<p>...&#x4F46;&#x662F;&#x8C01;&#x8BF4; <em>new Animal()</em> &#x53EF;&#x4EE5;&#x6CA1;&#x6709;name&#x5C31;&#x88AB;&#x8C03;&#x7528;&#xFF1F;&#x6784;&#x9020;&#x51FD;&#x6570;&#x53EF;&#x80FD;&#x4F1A;&#x4E25;&#x683C;&#x5730;&#x8981;&#x6C42;&#x53C2;&#x6570;&#x5E76;&#x4E14;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p>&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x95EE;&#x9898;&#x662F;&#x6BD4;&#x8FD9;&#x66F4;&#x6982;&#x5FF5;&#x5316;&#x3002;<strong>&#x6211;&#x4EEC;&#x4E0D;&#x60F3;&#x521B;&#x9020;&#x4E00;&#x4E2A;Animal&#x3002;&#x6211;&#x4EEC;&#x53EA;&#x60F3;&#x4ECE;&#x4E2D;&#x7EE7;&#x627F;&#x3002;</strong></p>
+<p>&#x8FD9;&#x4E5F;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;<em>Rabbit.prototype = inherit(Animal.prototype)</em> &#x66F4;&#x68D2;&#x7684;&#x539F;&#x56E0;&#x3002;&#x6CA1;&#x6709;&#x8D1F;&#x6548;&#x679C;&#x7684;&#x5E72;&#x51C0;&#x7684;&#x7EE7;&#x627F;&#x3002;</p>
+<p><strong>&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;</strong></p>
+<p>&#x201C;&#x7236;&#x7C7B;&#x201D; &#x6784;&#x9020;&#x51FD;&#x6570;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C06;Animal&#x51FD;&#x6570;&#x5E94;&#x7528;&#x5230;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x4E0A;&#x6765;&#x624B;&#x52A8;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Rabbit</span>(<span class="hljs-params">name</span>) </span>{
+  Animal.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>)
+}
+</code></pre>
+<p>&#x5728;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x6267;&#x884C;&#x52A8;&#x7269;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x53EF;&#x4EE5;&#x5728;&#x5B9E;&#x4F8B;&#x4E2D;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A; <em>name</em>&#x3002;</p>
+<p><strong>&#x91CD;&#x5199;&#x65B9;&#x6CD5;&#xFF08;&#x591A;&#x6001;&#xFF09;</strong></p>
+<p>&#x4E3A;&#x4E86;&#x8986;&#x76D6;&#x6389;&#x7236;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x5B50;&#x7C7B;&#x7684;&#x539F;&#x578B;&#x4E2D;&#x66FF;&#x6362;&#x6389;&#x5B83;&#xFF1A;</p>
+<pre><code class="lang-javascript">Rabbit.prototype.sit = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  alert(<span class="hljs-keyword">this</span>.name + <span class="hljs-string">&apos; sits in a rabbity way.&apos;</span>)
+}
+</code></pre>
+<p>&#x5F53;&#x8C03;&#x7528;<em>rabbit.sit()</em> &#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x4F1A;&#x5728;<em>rabbit</em>  &#x7684;&#x539F;&#x751F;&#x94FE;&#x4E0A;&#x5BFB;&#x627E;<em>sit</em> &#x65B9;&#x6CD5; &#xFF0C;&#x5148;&#x5728;<em>Rabbit.prototype</em> &#x4E0A;&#x627E;&#xFF0C;&#x627E;&#x4E0D;&#x5230;&#x5C31;&#x7EE7;&#x7EED;&#x5728;<em>Animal.prototype</em> &#x4E0A;&#x627E;&#x3002;&#x5E76;&#x4E14;&#x5982;&#x679C;&#x5728;<em>Rabbit.prototype</em> &#x4E0A;&#x627E;&#x5230;&#x5C31;&#x4E0D;&#x4F1A;&#x7EE7;&#x7EED;&#x4E0A;&#x5347;&#x5230;<em>Animal.prototype</em> &#x4E0A;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x6211;&#x4EEC;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x66F4;&#x5177;&#x4F53;&#x5730;&#x8BF4;&#x3002;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;&#x5BF9;&#x8C61;&#x4E0A;&#x88AB;&#x91CD;&#x5199;&#xFF1A;</p>
+<pre><code class="lang-javascript">rabbit.sit = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  alert(<span class="hljs-string">&apos;A special sit of this very rabbit &apos;</span> + <span class="hljs-keyword">this</span>.name)
+}
+</code></pre>
+<p><strong>&#x91CD;&#x5199;&#x540E;&#x8C03;&#x7528;&#x7236;&#x65B9;&#x6CD5;</strong></p>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x88AB;&#x91CD;&#x5199;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x8FD8;&#x60F3;&#x8981;&#x8C03;&#x7528;&#x4E4B;&#x524D;&#x90A3;&#x4E2A;&#x8001;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x8BF7;&#x6C42;&#x5B83;&#x7684;&#x7236;&#x7C7B;&#x7684;&#x539F;&#x578B;&#xFF0C;&#x8FD9;&#x662F;&#x6709;&#x53EF;&#x80FD;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-javascript">Rabbit.prototype.sit = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  alert(<span class="hljs-string">&apos;calling superclass sit:&apos;</span>)
+Animal.prototype.sit.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>)
+}
+</code></pre>
+<p>&#x6240;&#x6709;&#x7684;&#x7236;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#xFF0C;appll/call&#x4EE5;this&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x4F20;&#x9012;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6765;&#x88AB;&#x8C03;&#x7528;&#x3002;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x8C03;&#x7528;<em>Animal.prototype.sit()</em> &#x53EF;&#x4EE5;&#x4F7F;&#x7528;Animal.prototype&#x5F53;&#x505A;this&#x3002;</p>
+<p><strong>Sugar: &#x6D88;&#x9664;&#x7236;&#x7C7B;&#x7684;&#x76F4;&#x63A5;&#x5F15;&#x7528;</strong></p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x3002;&#x6216;&#x8005;&#x662F;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF1A;Animal.apply&#x2026;&#x2026;&#x6216;&#x65B9;&#x6CD5;&#xFF1A;Animal.prototype.sit.apply....</p>
+<p>&#x901A;&#x5E38;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x5E94;&#x8BE5;&#x8FD9;&#x6837;&#x505A;&#x3002;&#x91CD;&#x6784;&#x53EF;&#x80FD;&#x4F1A;&#x5728;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x4E2D;&#x6539;&#x53D8;&#x7236;&#x7C7B;&#x540D;&#x6216;&#x5F15;&#x5165;&#x4E2D;&#x95F4;&#x7C7B;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x5141;&#x8BB8;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x5BC6;&#x94A5;&#x6765;&#x8C03;&#x7528;&#x7236;&#x65B9;&#x6CD5;&#xFF0C;&#x50CF;<em>parent.method() </em>or <em>super()</em>.</p>
+<p>JavaScript&#x6CA1;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6548;&#x4EFF;&#x5B83;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x529F;&#x80FD;&#x6269;&#x5C55;&#x4E86;&#x7EE7;&#x627F;&#xFF0C;&#x5E76;&#x4E14;&#x8FD8;&#x6307;&#x5B9A;&#x7236;&#x7C7B;&#x548C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6CA1;&#x6709;&#x76F4;&#x63A5;&#x5F15;&#x7528;&#x7684;&#x7236;&#x7C7B;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">extend</span>(<span class="hljs-params">Child, Parent</span>) </span>{
+  Child.prototype = inherit(Parent.prototype)
+  Child.prototype.constructor = Child
+  Child.parent = Parent.prototype
+}
+</code></pre>
+<p>Usage&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Rabbit</span>(<span class="hljs-params">name</span>) </span>{
+  Rabbit.parent.constructor.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>) <span class="hljs-comment">// super constructor</span>
+}
+
+extend(Rabbit, Animal)
+
+Rabbit.prototype.run = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    Rabbit.parent.run.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>) <span class="hljs-comment">// parent method</span>
+    alert(<span class="hljs-string">&quot;fast&quot;</span>)
+}
+</code></pre>
+<p>&#x4F5C;&#x4E3A;&#x7ED3;&#x679C;&#xFF0C;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x547D;&#x540D;<em>Animal</em> &#xFF0C;&#x6216;&#x8005;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x7C7B;<em>Grasseatinganimal</em> &#x5E76;&#x4E14;&#x8FD9;&#x4E9B;&#x6539;&#x53D8;&#x53EA;&#x4F1A;&#x89E6;&#x78B0;&#x5230;Animal&#x548C;&#x6269;&#x5C55;&#xFF08;&#x2026;&#xFF09;&#x3002;</p>
+<p><strong>&#x79C1;&#x6709;/&#x4FDD;&#x62A4;&#x65B9;&#x6CD5; (&#x5C01;&#x88C5;)</strong></p>
+<p>&#x4FDD;&#x62A4;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;&#x88AB;&#x547D;&#x540D;&#x7EA6;&#x5B9A;&#x652F;&#x6301;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x4E00;&#x4E2A;&#x4EE5;&#x4E0B;&#x5212;&#x7EBF;&#x201C;_&#x201D;&#x5F00;&#x59CB;&#x7684;&#x65B9;&#x6CD5;&#x4E0D;&#x5E94;&#x8BE5;&#x88AB;&#x4ECE;&#x5916;&#x90E8;&#x8C03;&#x7528;&#xFF08;&#x6280;&#x672F;&#x4E0A;&#x662F;&#x53EF;&#x8C03;&#x7528;&#x7684;&#xFF09;&#x3002;</p>
+<p><img src="http://javascript.info/files/tutorial/advanced/oop/animal_private.png" alt=""></p>
+<p>&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x901A;&#x5E38;&#x4E5F;&#x4E0D;&#x652F;&#x6301;&#x3002;</p>
+<p><strong>&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;</strong></p>
+<p>&#x9759;&#x6001;&#x5C5E;&#x6027;/&#x65B9;&#x6CD5;&#x76F4;&#x63A5;&#x5206;&#x914D;&#x7ED9;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Animal</span>(<span class="hljs-params"></span>) </span>{ 
+  Animal.count++
+}
+Animal.count = <span class="hljs-number">0</span>
+
+<span class="hljs-keyword">new</span> Animal()
+<span class="hljs-keyword">new</span> Animal()
+
+alert(Animal.count) <span class="hljs-comment">// 2</span>
+</code></pre>
+<p><strong>&#x603B;&#x7ED3;</strong></p>
+<p>&#x6700;&#x540E;&#xFF0C;&#x6574;&#x4E2A;suppa-mega-oop &#x6846;&#x67B6;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">extend</span>(<span class="hljs-params">Child, Parent</span>) </span>{
+  Child.prototype = inherit(Parent.prototype)
+  Child.prototype.constructor = Child
+  Child.parent = Parent.prototype
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inherit</span>(<span class="hljs-params">proto</span>) </span>{
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span>(<span class="hljs-params"></span>) </span>{}
+  F.prototype = proto
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> F
+}
+</code></pre>
+<p>&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// --------- the base object ------------</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Animal</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-keyword">this</span>.name = name
+}
+
+<span class="hljs-comment">// methods</span>
+Animal.prototype.run = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  alert(<span class="hljs-keyword">this</span> + <span class="hljs-string">&quot; is running!&quot;</span>)
+}
+
+Animal.prototype.toString = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name
+}
+
+
+<span class="hljs-comment">// --------- the child object -----------</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Rabbit</span>(<span class="hljs-params">name</span>) </span>{
+  Rabbit.parent.constructor.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>)
+}
+
+<span class="hljs-comment">// inherit</span>
+extend(Rabbit, Animal)
+
+<span class="hljs-comment">// override</span>
+Rabbit.prototype.run = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  Rabbit.parent.run.apply(<span class="hljs-keyword">this</span>)
+  alert(<span class="hljs-keyword">this</span> + <span class="hljs-string">&quot; bounces high into the sky!&quot;</span>)
+}
+
+<span class="hljs-keyword">var</span> rabbit = <span class="hljs-keyword">new</span> Rabbit(<span class="hljs-string">&apos;Jumper&apos;</span>)
+rabbit.run()
+</code></pre>
+<p>&#x6846;&#x67B6;&#x53EF;&#x4EE5;&#x591A;&#x52A0;&#x4E00;&#x70B9;&#x7CD6;&#xFF0C;&#x50CF;&#x529F;&#x80FD;&#x6DF7;&#x5408;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4ECE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0A;&#x590D;&#x5236;&#x8BB8;&#x591A;&#x5C5E;&#x6027;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0A;&#xFF1A;</p>
+<pre><code class="lang-javascript">mixin(Animal.prototype, { run: ..., toString: ...})
+</code></pre>
+<p>&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x53EA;&#x6709;&#x4E24;&#x4E2A;&#x5C0F;&#x529F;&#x80FD;&#x8981;&#x505A;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;OOP&#x6A21;&#x5F0F;&#x3002;</p>
 
                                 
                                 </section>
@@ -1795,12 +1847,12 @@ var b;
 
             
                 
-                <a href="hello-world.html" class="navigation navigation-prev " aria-label="Previous page: Hello, World!">
+                <a href="oop-concepts.html" class="navigation navigation-prev " aria-label="Previous page: 基本概念">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="development.md" class="navigation navigation-next " aria-label="Next page: 浏览器开发工具">
+                <a href="all-one-constructor-pattern.md" class="navigation navigation-next " aria-label="Next page: All-in-one constructor 模式">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1811,7 +1863,7 @@ var b;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"变量和声明","level":"1.3.2.3","depth":3,"next":{"title":"浏览器开发工具","level":"1.3.2.4","depth":3,"path":"_src/development.md","ref":"_src/development.md","articles":[]},"previous":{"title":"Hello, World!","level":"1.3.2.2","depth":3,"path":"_src/hello-world.md","ref":"_src/hello-world.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"_src/variables-and-statements.md","mtime":"2017-06-14T04:28:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-14T07:14:37.489Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Pseudo-classical 模式","level":"1.5.5.2","depth":3,"next":{"title":"All-in-one constructor 模式","level":"1.5.5.3","depth":3,"path":"_src/all-one-constructor-pattern.md","ref":"_src/all-one-constructor-pattern.md","articles":[]},"previous":{"title":"基本概念","level":"1.5.5.1","depth":3,"path":"_src/oop-concepts.md","ref":"_src/oop-concepts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"_src/pseudo-classical-pattern.md","mtime":"2017-06-14T04:28:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-14T07:14:37.489Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

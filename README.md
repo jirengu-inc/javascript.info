@@ -1,5 +1,6 @@
 Javascipt 学习指南
 =======
+[预览地址](http://book.jirengu.com/jirengu-inc/javascript.info/_book/)
 
 ## 如何参与翻译
 
@@ -10,9 +11,11 @@ Javascipt 学习指南
 4. push 到 github
 5. 提交 PullRequest
 
+参与的同学在issues里认领文章
 
 
-本书英文版地址:[http://javascript.info/](javascript.info/)，原创作者： Ilya Kantor， 可以查看他的 [GitHub](https://github.com/iliakan) 联系他。
+
+本书英文版地址:[http://javascript.info/](http://javascript.info/)，原创作者： Ilya Kantor， 可以查看他的 [GitHub](https://github.com/iliakan) 联系他。
 
 本书中文版经作者授权饥人谷翻译，翻译工作由饥人谷学员和前端爱好者完成。
 
